@@ -182,4 +182,4 @@ exec nm-applet
 exec mate-power-manager
 exec glipper
 exec volumeicon
-
+exec syndaemon -i 2 -t -k
