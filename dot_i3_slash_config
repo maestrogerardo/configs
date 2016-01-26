@@ -94,7 +94,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # gad: set some variables
-set $workspace01 "1: "
+set $workspace01 "1: "
 set $workspace02 "2: "
 set $workspace03 "3: "
 set $workspace04 "4: "
