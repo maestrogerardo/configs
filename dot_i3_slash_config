@@ -94,11 +94,11 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # gad: set some variables
-set $workspace01 "1: "
-set $workspace02 "2: "
-set $workspace03 "3: "
-set $workspace04 "4: "
-set $workspace05 "5: "
+set $workspace01 "1 "
+set $workspace02 "2 "
+set $workspace03 "3 "
+set $workspace04 "4 "
+set $workspace05 "5 "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace01
@@ -135,7 +135,7 @@ exec --no-startup-id i3-msg "workspace $workspace04; exec i3-sensible-terminal"
 exec --no-startup-id i3-msg "workspace $workspace05; exec firefox"
 
 # gad: setup stuff on autostart
-set $workspaceSetup ": Hola Maestro! Have fun setting up your system..."
+set $workspaceSetup " Hola Maestro! Have fun setting up your system..."
 exec --no-startup-id i3-msg "workspace $workspaceSetup; exec xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
 
 # reload the configuration file
