@@ -195,7 +195,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86Battery exec mate-power-statistics
 
 # lock screen
-bindsym $mod+x exec "i3lock --image=/home/gad/Pictures/wallpapaper/i3wm.png --color=000000"
+bindsym $mod+shift+x exec "i3lock --image=/home/gad/Pictures/wallpapaper/i3wm.png --color=000000"
+
+# setup monitor stuff (homve VS underway)
+bindsym $mod+shift+m exec "/home/gad/src/gitolite/scripts/Bash/gad-setup-monitor-stuff.sh"
 
 # background image
 exec_always feh --bg-fill /home/gad/Pictures/wallpaper/i3wm.png
