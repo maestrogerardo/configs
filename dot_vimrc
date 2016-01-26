@@ -1,0 +1,6 @@
+" Enable syntax highlighting
+syntax on
+
+" Highlight trailing whitespaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
