@@ -124,8 +124,19 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# assign programs to specific workspaces
+# gad: assign programs to specific workspaces
 # assign [class="Firefox"] $workspace 5
+
+# gad: utostart some programs (assigned to specific workspaces)
+exec --no-startup-id i3-msg "workspace $workspace01; exec caja --no-desktop ~/Desktop/"
+exec --no-startup-id i3-msg "workspace $workspace02; exec thunderbird"
+exec --no-startup-id i3-msg "workspace $workspace03; exec pidgin --nologin"
+exec --no-startup-id i3-msg "workspace $workspace04; exec i3-sensible-terminal"
+exec --no-startup-id i3-msg "workspace $workspace05; exec firefox"
+
+# gad: setup stuff on autostart
+set $workspaceSetup ": Hola Maestro! Have fun setting up your system..."
+exec --no-startup-id i3-msg "workspace $workspaceSetup; exec xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -189,8 +200,7 @@ bindsym $mod+x exec "i3lock --image=/home/gad/Pictures/wallpapaper/i3wm.png --co
 # background image
 exec_always feh --bg-fill /home/gad/Pictures/wallpaper/i3wm.png
 
-# autostart stuff after login
-exec xterm -e /home/gad/src/gitolite/scripts/Bash/gad-autostart.sh
+# gad: autostart stuff after login
 exec nm-applet
 exec mate-power-manager
 exec glipper
