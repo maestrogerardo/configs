@@ -178,7 +178,7 @@ bar {
 		background #222222
 	}
 
-	status_command i3status
+	status_command i3blocks -c ~/.i3/i3blocks.conf
 	font pango:monospace 10
 }
 
