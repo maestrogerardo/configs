@@ -6,6 +6,7 @@
     background_image = None
     background_darkness = 0.95
     scrollback_lines = 50000
+    background_type = transparent
     scrollbar_position = hidden
     foreground_color = "#dddddd"
     scroll_on_output = False
