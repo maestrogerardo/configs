@@ -11,7 +11,7 @@
     foreground_color = "#dddddd"
     scroll_on_output = False
     show_titlebar = False
-    background_color = "#303030"
+    background_color = "#272727"
 [layouts]
   [[default]]
     [[[child1]]]
