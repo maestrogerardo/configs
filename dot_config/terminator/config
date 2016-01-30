@@ -4,14 +4,13 @@
 [profiles]
   [[default]]
     background_image = None
-    background_darkness = 0.95
+    background_darkness = 0.76
     scrollback_lines = 50000
-    background_type = transparent
     scrollbar_position = hidden
-    foreground_color = "#dddddd"
+    foreground_color = "#000000"
     scroll_on_output = False
     show_titlebar = False
-    background_color = "#272727"
+    background_color = "#eeeeee"
 [layouts]
   [[default]]
     [[[child1]]]
