@@ -175,7 +175,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	colors {
-		background #373737
+		background #dddddd
 	}
 
 	status_command i3blocks -c ~/.i3/i3blocks.conf
@@ -206,7 +206,7 @@ bindsym $mod+shift+x exec "i3lock --image=/home/gad/Pictures/wallpaper/i3wm-dark
 bindsym $mod+shift+m exec "/home/gad/src/gitolite/scripts/Bash/gad-setup-monitor-stuff.sh"
 
 # background image
-exec_always feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-dark-gray.png
+exec_always feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-light-gray.png
 
 # gad: autostart stuff after login
 exec nm-applet
