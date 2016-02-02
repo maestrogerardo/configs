@@ -2,8 +2,10 @@
 syntax on
 
 " Highlight trailing whitespaces
-highlight ExtraWhitespace ctermbg=darkgray guibg=darkgray
-match ExtraWhitespace /\s\+$/
+highlight ExtraWhitespace ctermbg=red guibg=red
+"match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
