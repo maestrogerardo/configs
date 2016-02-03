@@ -195,7 +195,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	colors {
-		background #dddddd
+		background #ffffff
 	}
 
 	status_command i3blocks -c ~/.i3/i3blocks.conf
