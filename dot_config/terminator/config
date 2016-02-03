@@ -1,22 +1,22 @@
 [global_config]
   inactive_color_offset = 1.0
 [keybindings]
-[profiles]
-  [[default]]
-    background_image = None
-    background_darkness = 0.76
-    scrollback_lines = 50000
-    scrollbar_position = hidden
-    foreground_color = "#000000"
-    scroll_on_output = False
-    show_titlebar = False
-    background_color = "#eeeeee"
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#333333"
+    background_darkness = 0.54
+    background_image = None
+    foreground_color = "#dddddd"
+    scroll_on_output = False
+    scrollback_lines = 50000
+    scrollbar_position = hidden
+    show_titlebar = False
