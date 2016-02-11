@@ -148,7 +148,7 @@ bindsym $mod+Control+Shift+0 move container to workspace 20
 # assign [class="Firefox"] $workspace 5
 
 # gad: utostart some programs (assigned to specific workspaces)
-exec --no-startup-id i3-msg "workspace $workspace01; exec caja --no-desktop ~/Desktop/"
+exec --no-startup-id i3-msg "workspace $workspace01; exec nautilus --no-desktop ~/Desktop/"
 exec --no-startup-id i3-msg "workspace $workspace02; exec thunderbird"
 exec --no-startup-id i3-msg "workspace $workspace03; exec pidgin --nologin"
 exec --no-startup-id i3-msg "workspace $workspace04; exec i3-sensible-terminal"
