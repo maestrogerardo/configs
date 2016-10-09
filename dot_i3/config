@@ -234,3 +234,4 @@ exec mate-power-manager
 exec glipper
 exec volumeicon
 exec syndaemon -i 2 -t -k
+exec ~/src/gitolite/scripts/Bash/gad-setup-monitor-stuff.sh
