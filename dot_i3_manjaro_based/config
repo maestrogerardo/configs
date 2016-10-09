@@ -278,6 +278,9 @@ bindsym $mod+9 exec --no-startup-id blurlock
 ## adjustment of i3bar battery reading (only run at the very first login):
 #exec --no-startup-id /usr/bin/adjust_i3statusconf
 #exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+
+#gad: compton -cfz -C -o 0.5 -i 0.7 -l -35 -t -50 -r 25
+
 #exec --no-startup-id start_conky_live_maia
 # exec --no-startup-id blueman
 exec --no-startup-id clipit
