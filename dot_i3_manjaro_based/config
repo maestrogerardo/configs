@@ -306,7 +306,7 @@ exec_always sleep 3; feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-dark-gray.p
 #exec_always feh --bg-fill /tmp/default.png
 #exec_always convert /usr/share/images/desktop-base/default -resize 3120x1920 /tmp/default.png; feh --bg-fill /tmp/default.png
 #exec --no-startup-id compton -cz -C -o 0.5 -i 0.8 -l -35 -t -50 -r 25 -b
-#exec --no-startup-id compton -i 0.8 -b
+exec --no-startup-id compton -i 0.9 -b
 
 # Autostart applications
 ## adjustment of i3bar battery reading (only run at the very first login):
