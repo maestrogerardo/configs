@@ -1,16 +1,6 @@
 [global_config]
   inactive_color_offset = 1.0
 [keybindings]
-[profiles]
-  [[default]]
-    background_image = None
-    background_darkness = 0.54
-    scrollback_lines = 50000
-    scrollbar_position = hidden
-    foreground_color = "#dddddd"
-    scroll_on_output = False
-    show_titlebar = False
-    background_color = "#333333"
 [layouts]
   [[default]]
     [[[child1]]]
@@ -20,3 +10,15 @@
       parent = ""
       type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.8
+    background_image = None
+    background_type = transparent
+    font = Noto Mono 10
+    foreground_color = "#dddddd"
+    scroll_on_output = False
+    scrollback_lines = 50000
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False

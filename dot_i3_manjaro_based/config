@@ -21,7 +21,7 @@ bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:Noto Mono 12
+font xft:Noto Mono 10
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -51,8 +51,8 @@ bindsym $mod+Ctrl+m exec xterm -e 'alsamixer'
 ################################################################################################
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send -t 1600 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send -t 1600 'brightness down'"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -103,8 +103,8 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+h split h;exec notify-send -t 1600 'tile horizontally'
+bindsym $mod+v split v;exec notify-send -t 1600 'tile vertically'
 bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
@@ -151,6 +151,12 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
+set $ws9 9
+set $ws10 10
+#set $ws11 11
+
+# gad: INFO: Find out key names for bindsym => use 'xev'
+#      Eg. ` => grave, - => minus, ...
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -161,6 +167,9 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+#bindsym $mod+minus workspace $ws11
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -171,6 +180,9 @@ bindsym $mod+Ctrl+5 move container to workspace $ws5
 bindsym $mod+Ctrl+6 move container to workspace $ws6
 bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
+bindsym $mod+Ctrl+0 move container to workspace $ws10
+#bindsym $mod+Ctrl+minus move container to workspace $ws11
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -181,6 +193,9 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
+#bindsym $mod+Shift+minus move container to workspace $ws11; workspace $ws11
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
@@ -231,8 +246,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+#bindsym $mod+0 mode "$mode_system"
+#set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
@@ -272,14 +287,32 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+# bindsym $mod+9 exec --no-startup-id blurlock
+
+
+#gad stuff ===
+
+# gad: setup stuff on autostart
+set $workspaceSetup " Hola Maestro! Have fun setting up your system..."
+exec --no-startup-id i3-msg "workspace $workspaceSetup; exec xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
+
+
+# lock screen
+#bindsym $mod+shift+x exec "i3lock --image=/home/gad/Pictures/wallpaper/i3wm-dark-gray.png --color=272727"
+bindsym $mod+shift+x exec "import -window root /tmp/screenshot.png; convert /tmp/screenshot.png -spread 6 /tmp/screenshotblur.png; i3lock -i /tmp/screenshotblur.png"
+exec --no-startup-id /home/gad/src/gitolite/scripts/Bash/gad-setup-monitor-office-stuff
+exec_always sleep 3; feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-dark-gray.png 
+#exec_always feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-light-gray.png
+#exec_always feh --bg-fill /tmp/default.png
+#exec_always convert /usr/share/images/desktop-base/default -resize 3120x1920 /tmp/default.png; feh --bg-fill /tmp/default.png
+#exec --no-startup-id compton -cz -C -o 0.5 -i 0.8 -l -35 -t -50 -r 25 -b
+#exec --no-startup-id compton -i 0.8 -b
 
 # Autostart applications
 ## adjustment of i3bar battery reading (only run at the very first login):
 #exec --no-startup-id /usr/bin/adjust_i3statusconf
 #exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
-#gad: compton -cfz -C -o 0.5 -i 0.7 -l -35 -t -50 -r 25
 
 #exec --no-startup-id start_conky_live_maia
 # exec --no-startup-id blueman
@@ -298,12 +331,12 @@ bar {
 	status_command i3status
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
+	tray_output primary
 #	tray_output eDP1
 
 	bindsym button4 nop
 	bindsym button5 nop
-	font xft:Noto Sans,Icons 12.5
+	font xft:Noto Sans,Icons 10.5
 	strip_workspace_numbers yes
 
 	colors {
@@ -338,8 +371,8 @@ client.background       #2B2C2B
 #############################
 
 # Set inner/outer gaps
-gaps inner 10
-gaps outer -4
+gaps inner 12
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -347,7 +380,7 @@ gaps outer -4
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+#smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
