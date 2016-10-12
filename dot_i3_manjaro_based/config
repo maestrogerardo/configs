@@ -293,20 +293,23 @@ mode "resize" {
 #gad stuff ===
 
 # gad: setup stuff on autostart
-set $workspaceSetup " Hola Maestro! Have fun setting up your system..."
-exec --no-startup-id i3-msg "workspace $workspaceSetup; exec xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
+#set $workspaceSetup " Hola Maestro! Have fun setting up your system..."
+#exec --no-startup-id i3-msg "workspace $workspaceSetup; exec xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
+exec --no-startup-id "exec xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
 
 
 # lock screen
 #bindsym $mod+shift+x exec "i3lock --image=/home/gad/Pictures/wallpaper/i3wm-dark-gray.png --color=272727"
 bindsym $mod+shift+x exec "import -window root /tmp/screenshot.png; convert /tmp/screenshot.png -spread 6 /tmp/screenshotblur.png; i3lock -i /tmp/screenshotblur.png"
-exec --no-startup-id /home/gad/src/gitolite/scripts/Bash/gad-setup-monitor-office-stuff
-exec_always sleep 3; feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-dark-gray.png 
+#exec --no-startup-id /home/gad/src/gitolite/scripts/Bash/gad-setup-monitor-office-stuff
+#exec --no-startup-id "xsetroot -solid #2b2c2b"
+#exec_always sleep 3; feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-dark-gray.png 
 #exec_always feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-light-gray.png
-#exec_always feh --bg-fill /tmp/default.png
 #exec_always convert /usr/share/images/desktop-base/default -resize 3120x1920 /tmp/default.png; feh --bg-fill /tmp/default.png
+#exec_always feh --bg-fill /tmp/default.png
 #exec --no-startup-id compton -cz -C -o 0.5 -i 0.8 -l -35 -t -50 -r 25 -b
-exec --no-startup-id compton -i 0.9 -b
+exec_always "convert -size 1920x1200 xc:#2b2c2b /tmp/i3-bg.png; feh --bg-fill /tmp/i3-bg.png"
+exec --no-startup-id "compton -i 0.9 --backend glx -b"
 
 # Autostart applications
 ## adjustment of i3bar battery reading (only run at the very first login):
@@ -323,7 +326,7 @@ exec --no-startup-id nm-applet
 #exec --no-startup-id pamac-tray
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id xfce4-power-manager
 #exec_always --no-startup-id fix_xcursor
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
@@ -331,13 +334,15 @@ bar {
 	status_command i3status
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-	tray_output primary
-#	tray_output eDP1
+#	tray_output primary
+	tray_output DVI-I-1
 
 	bindsym button4 nop
 	bindsym button5 nop
 	font xft:Noto Sans,Icons 10.5
 	strip_workspace_numbers yes
+
+#	position top
 
 	colors {
 #	background $transparent
@@ -380,7 +385,7 @@ gaps outer 0
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-#smart_gaps on
+smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)

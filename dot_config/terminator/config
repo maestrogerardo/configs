@@ -12,7 +12,7 @@
 [plugins]
 [profiles]
   [[default]]
-    background_darkness = 0.8
+    background_darkness = 0.95
     background_image = None
     background_type = transparent
     font = Noto Mono 10
