@@ -42,7 +42,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-exec --no-startup-id volumeicon
+#exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec xterm -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
@@ -143,17 +143,28 @@ bindsym $mod+Ctrl+Left workspace prev
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
 
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
-set $ws9 9
-set $ws10 10
-#set $ws11 11
+# gad: set some variables
+set $ws1 "1:1 "
+set $ws2 "2:2 "
+set $ws3 "3:3 "
+set $ws4 "4:4 "
+set $ws5 "5:5 "
+set $ws6 "6:6 "
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+workspace $ws1 output primary
+workspace $ws2 output primary
+workspace $ws3 output primary
+workspace $ws4 output primary
+workspace $ws5 output primary
+workspace $ws6 output primary
+workspace $ws7 output primary
+workspace $ws8 output primary
+workspace $ws9 output primary
+#workspace $ws10 output primary
 
 # gad: INFO: Find out key names for bindsym => use 'xev'
 #      Eg. ` => grave, - => minus, ...
@@ -169,7 +180,6 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-#bindsym $mod+minus workspace $ws11
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -182,7 +192,6 @@ bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
 bindsym $mod+Ctrl+9 move container to workspace $ws9
 bindsym $mod+Ctrl+0 move container to workspace $ws10
-#bindsym $mod+Ctrl+minus move container to workspace $ws11
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -195,7 +204,16 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
-#bindsym $mod+Shift+minus move container to workspace $ws11; workspace $ws11
+
+# gad: assign programs to specific workspaces
+# assign [class="Firefox"] $workspace 5
+
+# gad: utostart some programs (assigned to specific workspaces)
+#exec --no-startup-id i3-msg "workspace $ws1; exec thunderbird"
+#exec --no-startup-id i3-msg "workspace $ws3; exec pidgin --nologin"
+#exec --no-startup-id i3-msg "workspace $ws4; exec terminator"
+#exec --no-startup-id i3-msg "workspace $ws5; exec firefox --new-instance"
+#exec --no-startup-id i3-msg "workspace $ws6; exec nemo --no-desktop ~/Desktop/"
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
@@ -248,19 +266,19 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Set shut down, restart and locking features
 #bindsym $mod+0 mode "$mode_system"
 #set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+#mode "$mode_system" {
+#    bindsym l exec --no-startup-id i3exit lock, mode "default"
+#    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+#    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+#    bindsym e exec --no-startup-id i3exit logout, mode "default"
+#    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+#    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+#    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+#
+#    # exit system mode: "Enter" or "Escape"
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
@@ -292,12 +310,6 @@ mode "resize" {
 
 #gad stuff ===
 
-# gad: setup stuff on autostart
-#set $workspaceSetup " Hola Maestro! Have fun setting up your system..."
-#exec --no-startup-id i3-msg "workspace $workspaceSetup; exec xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
-exec --no-startup-id "exec xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
-
-
 # lock screen
 #bindsym $mod+shift+x exec "i3lock --image=/home/gad/Pictures/wallpaper/i3wm-dark-gray.png --color=272727"
 bindsym $mod+shift+x exec "import -window root /tmp/screenshot.png; convert /tmp/screenshot.png -spread 6 /tmp/screenshotblur.png; i3lock -i /tmp/screenshotblur.png"
@@ -305,10 +317,11 @@ bindsym $mod+shift+x exec "import -window root /tmp/screenshot.png; convert /tmp
 #exec --no-startup-id "xsetroot -solid #2b2c2b"
 #exec_always sleep 3; feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-dark-gray.png 
 #exec_always feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-light-gray.png
-#exec_always convert /usr/share/images/desktop-base/default -resize 3120x1920 /tmp/default.png; feh --bg-fill /tmp/default.png
+exec_always convert /usr/share/images/desktop-base/default -resize 1920x1200 -modulate 64,100,100 /tmp/default.png; feh --bg-fill /tmp/default.png
+#exec_always convert /usr/share/images/desktop-base/joy-wallpaper_1920x1200.svg -resize 1920x1200 /tmp/default.png; feh --bg-fill /tmp/default.png
 #exec_always feh --bg-fill /tmp/default.png
 #exec --no-startup-id compton -cz -C -o 0.5 -i 0.8 -l -35 -t -50 -r 25 -b
-exec_always "convert -size 1920x1200 xc:#2b2c2b /tmp/i3-bg.png; feh --bg-fill /tmp/i3-bg.png"
+#exec_always "convert -size 1920x1200 xc:#2b2c2b /tmp/i3-bg.png; feh --bg-fill /tmp/i3-bg.png"
 exec --no-startup-id "compton -i 0.9 --backend glx -b"
 
 # Autostart applications
@@ -318,7 +331,7 @@ exec --no-startup-id "compton -i 0.9 --backend glx -b"
 
 
 #exec --no-startup-id start_conky_live_maia
-exec --no-startup-id "conky -c ~/src/github/configs/conky/conky_maia"
+exec --no-startup-id i3-msg "workspace $ws7; exec conky -c ~/src/github/configs/conky/conky_maia"
 # exec --no-startup-id blueman
 exec --no-startup-id clipit
 exec --no-startup-id desktop-items
@@ -329,6 +342,12 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id xfce4-power-manager
 #exec_always --no-startup-id fix_xcursor
+
+exec --no-startup-id volumeicon
+
+# gad: setup stuff on autostart
+exec --no-startup-id sleep 3; i3-msg "workspace $ws7; exec xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
+#exec --no-startup-id "exec xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
