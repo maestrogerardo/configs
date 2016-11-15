@@ -346,7 +346,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id volumeicon
 
 # gad: automatically lock screen after 1 minunte
-exec --no-startup-id xautolock -time 1 -locker "import -window root /tmp/screenshot.png; convert /tmp/screenshot.png -spread 6 /tmp/screenshotblur.png; i3lock -i /tmp/screenshotblur.png"
+exec --no-startup-id xautolock -time 2 -locker "import -window root /tmp/screenshot.png; convert /tmp/screenshot.png -spread 6 /tmp/screenshotblur.png; i3lock -i /tmp/screenshotblur.png"
 
 # gad: setup stuff on autostart
 exec --no-startup-id sleep 3; i3-msg "workspace $ws7; exec xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
