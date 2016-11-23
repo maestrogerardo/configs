@@ -344,6 +344,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id xfce4-power-manager
 #exec_always --no-startup-id fix_xcursor
+exec --no-startup-id /home/gad/src/gitolite/scripts/gad-handle-potential-pm-stuff
 
 exec --no-startup-id volumeicon
 
