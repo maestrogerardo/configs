@@ -8,7 +8,8 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
+# new_window pixel 1
+new_window normal
 new_float normal
 
 # Hide borders
@@ -21,7 +22,7 @@ bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:Noto Mono 10
+font xft:Noto Mono 8
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -62,8 +63,8 @@ bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+# bindsym $mod+t exec --no-startup-id pkill compton
+# bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -313,7 +314,7 @@ mode "resize" {
 # lock screen
 #bindsym $mod+shift+x exec "i3lock --image=/home/gad/Pictures/wallpaper/i3wm-dark-gray.png --color=272727"
 bindsym $mod+shift+x exec "import -window root /tmp/screenshot.png; convert /tmp/screenshot.png -spread 6 /tmp/screenshotblur.png; i3lock -i /tmp/screenshotblur.png"
-#exec --no-startup-id /home/gad/src/gitolite/scripts/Bash/gad-setup-monitor-office-stuff
+exec --no-startup-id /home/gad/src/gitolite/scripts/Bash/gad-setup-monitor
 #exec --no-startup-id "xsetroot -solid #2b2c2b"
 #exec_always sleep 3; feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-dark-gray.png 
 #exec_always feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-light-gray.png
@@ -322,7 +323,8 @@ exec_always convert /usr/share/images/desktop-base/default -resize 1920x1200 -mo
 #exec_always feh --bg-fill /tmp/default.png
 #exec --no-startup-id compton -cz -C -o 0.5 -i 0.8 -l -35 -t -50 -r 25 -b
 #exec_always "convert -size 1920x1200 xc:#2b2c2b /tmp/i3-bg.png; feh --bg-fill /tmp/i3-bg.png"
-exec --no-startup-id "compton -i 0.9 --backend glx -b"
+# exec --no-startup-id "compton -i 0.9 --backend glx -b"
+exec --no-startup-id "compton --backend glx -b"
 
 # Autostart applications
 ## adjustment of i3bar battery reading (only run at the very first login):
@@ -357,7 +359,7 @@ bar {
 	status_command i3status
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-	#tray_output primary
+	tray_output primary
 	#tray_output DVI-I-1
 
 	bindsym button4 nop
@@ -386,67 +388,69 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                 border  backgr. text    indic.  child_border
-client.focused          #808280 #808280 #80FFF9 #FDF6E3
+# client.focused          #808280 #808280 #80FFF9 #FDF6E3
+client.focused          #606060 #606060 #ffffff #FDF6E3
 client.focused_inactive #434745 #434745 #16A085 #454948
-client.unfocused        #434745 #434745 #16A085 #454948
+# client.unfocused        #434745 #434745 #16A085 #454948
+client.unfocused        #404040 #404040 #bbbbbb #454948
 client.urgent           #CB4B16 #FDF6E3 #16A085 #268BD2
 client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
 
 client.background       #2B2C2B
 
-#############################
-### settings for i3-gaps: ###
-#############################
-
-# Set inner/outer gaps
-gaps inner 12
-gaps outer -2
-
-# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-# gaps inner|outer current|all set|plus|minus <px>
-# gaps inner all set 10
-# gaps outer all plus 5
-
-# Smart gaps (gaps used if only more than one container on the workspace)
-# smart_gaps on
-
-# Smart borders (draw borders around container only if it is not the only container on this workspace)
-# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
-
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+# #############################
+# ### settings for i3-gaps: ###
+# #############################
+# 
+# # Set inner/outer gaps
+# gaps inner 12
+# gaps outer -2
+# 
+# # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# # gaps inner|outer current|all set|plus|minus <px>
+# # gaps inner all set 10
+# # gaps outer all plus 5
+# 
+# # Smart gaps (gaps used if only more than one container on the workspace)
+# # smart_gaps on
+# 
+# # Smart borders (draw borders around container only if it is not the only container on this workspace)
+# # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+# smart_borders on
+# 
+# # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+# set $mode_gaps Gaps: (o) outer, (i) inner
+# set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+# set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+# bindsym $mod+Shift+g mode "$mode_gaps"
+# 
+# mode "$mode_gaps" {
+#         bindsym o      mode "$mode_gaps_outer"
+#         bindsym i      mode "$mode_gaps_inner"
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
+# mode "$mode_gaps_inner" {
+#         bindsym plus  gaps inner current plus 5
+#         bindsym minus gaps inner current minus 5
+#         bindsym 0     gaps inner current set 0
+# 
+#         bindsym Shift+plus  gaps inner all plus 5
+#         bindsym Shift+minus gaps inner all minus 5
+#         bindsym Shift+0     gaps inner all set 0
+# 
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
+# mode "$mode_gaps_outer" {
+#         bindsym plus  gaps outer current plus 5
+#         bindsym minus gaps outer current minus 5
+#         bindsym 0     gaps outer current set 0
+# 
+#         bindsym Shift+plus  gaps outer all plus 5
+#         bindsym Shift+minus gaps outer all minus 5
+#         bindsym Shift+0     gaps outer all set 0
+# 
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
