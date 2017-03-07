@@ -1,8 +1,26 @@
-" Enable syntax highlighting
+"Color theme
+color desert
+
+
+"Enable syntax highlighting
 syntax on
 
-" Highlight trailing whitespaces
+
+"Line numbering
+set number
+
+
+"Highlight current line
+set cursorline
+hi CursorLine cterm=none ctermbg=darkgray
+
+
+"Highlight trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
-"match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+
+
+"Filename tab completeion
+set wildmode=longest,list,full
+set wildmenu
