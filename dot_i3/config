@@ -173,7 +173,6 @@ exec --no-startup-id "compton --backend glx -b"
 exec --no-startup-id "conky -c ~/src/github/configs/conky/conky_maia"
 # exec --no-startup-id blueman
 exec --no-startup-id clipit
-exec --no-startup-id desktop-items
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # start a powermanager (only) if necessary
