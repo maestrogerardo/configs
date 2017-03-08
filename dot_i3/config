@@ -36,7 +36,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec j4-dmenu-desktop
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -93,70 +92,29 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# gad: set some variables
-set $workspace01 "1 "
-set $workspace02 "2 "
-set $workspace03 "3 "
-set $workspace04 "4 "
-set $workspace05 "5 "
-
 # switch to workspace
-bindsym $mod+1 workspace $workspace01
-bindsym $mod+2 workspace $workspace02
-bindsym $mod+3 workspace $workspace03
-bindsym $mod+4 workspace $workspace04
-bindsym $mod+5 workspace $workspace05
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
-bindsym $mod+Control+1 workspace 11
-bindsym $mod+Control+2 workspace 12
-bindsym $mod+Control+3 workspace 13
-bindsym $mod+Control+4 workspace 14
-bindsym $mod+Control+5 workspace 15
-bindsym $mod+Control+6 workspace 16
-bindsym $mod+Control+7 workspace 17
-bindsym $mod+Control+8 workspace 18
-bindsym $mod+Control+9 workspace 19
-bindsym $mod+Control+0 workspace 20
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace01
-bindsym $mod+Shift+2 move container to workspace $workspace02
-bindsym $mod+Shift+3 move container to workspace $workspace03
-bindsym $mod+Shift+4 move container to workspace $workspace04
-bindsym $mod+Shift+5 move container to workspace $workspace05
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
-bindsym $mod+Control+Shift+1 move container to workspace 11
-bindsym $mod+Control+Shift+2 move container to workspace 12
-bindsym $mod+Control+Shift+3 move container to workspace 13
-bindsym $mod+Control+Shift+4 move container to workspace 14
-bindsym $mod+Control+Shift+5 move container to workspace 15
-bindsym $mod+Control+Shift+6 move container to workspace 16
-bindsym $mod+Control+Shift+7 move container to workspace 17
-bindsym $mod+Control+Shift+8 move container to workspace 18
-bindsym $mod+Control+Shift+9 move container to workspace 19
-bindsym $mod+Control+Shift+0 move container to workspace 20
-
-# gad: assign programs to specific workspaces
-# assign [class="Firefox"] $workspace 5
-
-# gad: utostart some programs (assigned to specific workspaces)
-exec --no-startup-id i3-msg "workspace $workspace01; exec nautilus --no-desktop ~/Desktop/"
-exec --no-startup-id i3-msg "workspace $workspace02; exec thunderbird"
-exec --no-startup-id i3-msg "workspace $workspace03; exec pidgin --nologin"
-exec --no-startup-id i3-msg "workspace $workspace04; exec i3-sensible-terminal"
-exec --no-startup-id i3-msg "workspace $workspace05; exec firefox"
-
-# gad: setup stuff on autostart
-set $workspaceSetup " Hola Maestro! Have fun setting up your system..."
-exec --no-startup-id i3-msg "workspace $workspaceSetup; exec xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -194,44 +152,37 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	colors {
-		background #ffffff
-	}
+	#gad
+	tray_output primary
 
-	status_command i3blocks -c ~/.i3/i3blocks.conf
-	font pango:monospace 10
+        status_command i3status
 }
 
-
-#gad
-#Focus follows mouse
-focus_follows_mouse no
-
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-
-# show battery stats
-bindsym XF86Battery exec mate-power-statistics
+#==== gad stuff ====
 
 # lock screen
-bindsym $mod+shift+x exec "i3lock --image=/home/gad/Pictures/wallpaper/i3wm-dark-gray.png --color=272727"
+bindsym $mod+shift+x exec "import -window root /tmp/screenshot.png; convert /tmp/screenshot.png -spread 6 /tmp/screenshotblur.png; i3lock -i /tmp/screenshotblur.png"
+exec --no-startup-id /home/gad/src/gitolite/scripts/Bash/gad-setup-monitor
+exec_always convert /usr/share/images/desktop-base/default -resize 1920x1200 -modulate 64,100,100 /tmp/default.png; feh --bg-fill /tmp/default.png
 
-# setup monitor stuff (homve VS underway)
-bindsym $mod+shift+m exec "/home/gad/src/gitolite/scripts/Bash/gad-setup-monitor-stuff.sh"
+# composite manager (to get vsync improved)
+exec --no-startup-id "compton --backend glx -b"
 
-# background image
-exec_always feh --bg-fill /home/gad/Pictures/wallpaper/i3wm-light-gray.png
+# Autostart applications
+# exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id "conky -c ~/src/github/configs/conky/conky_maia"
+# exec --no-startup-id blueman
+exec --no-startup-id clipit
+exec --no-startup-id desktop-items
+exec --no-startup-id nm-applet
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# start a powermanager (only) if necessary
+exec --no-startup-id /home/gad/src/gitolite/scripts/Bash/gad-handle-potential-pm-stuff
+exec --no-startup-id volumeicon
 
-# gad: autostart stuff after login
-exec nm-applet
-exec mate-power-manager
-exec glipper
-exec volumeicon
-exec syndaemon -i 2 -t -k
-exec ~/src/gitolite/scripts/Bash/gad-setup-monitor-stuff.sh
+# automatically lock screen after 1 minunte
+exec --no-startup-id xautolock -time 2 -locker "import -window root /tmp/screenshot.png; convert /tmp/screenshot.png -spread 6 /tmp/screenshotblur.png; i3lock -i /tmp/screenshotblur.png"
+
+# some wm/desktop overarching autostart stuff
+exec --no-startup-id "sleep 3; xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
+
