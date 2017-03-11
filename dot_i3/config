@@ -158,7 +158,14 @@ bar {
         status_command i3status
 }
 
-#==== gad stuff ====
+
+### gad stuff ###
+
+bindsym $mod+m bar mode toggle
+
+# Screen brightness
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send -t 1600 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send -t 1600 'brightness down'"
 
 # lock screen
 bindsym $mod+shift+x exec "import -window root /tmp/screenshot.png; convert /tmp/screenshot.png -spread 6 /tmp/screenshotblur.png; i3lock -i /tmp/screenshotblur.png"
