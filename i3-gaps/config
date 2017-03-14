@@ -178,7 +178,7 @@ exec --no-startup-id "compton --backend glx -b"
 
 # Autostart applications
 # exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id "conky -c ~/src/github/configs/conky/conky_maia"
+exec --no-startup-id "conky -c ~/src/github/configs/conky.conf"
 # exec --no-startup-id blueman
 exec --no-startup-id clipit
 exec --no-startup-id nm-applet
