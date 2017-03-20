@@ -185,7 +185,7 @@ exec --no-startup-id /home/gad/src/gitolite/scripts/Bash/gad-setup-monitor
 exec_always convert /usr/share/images/desktop-base/default -resize 1920x1200 -modulate 64,100,100 /tmp/default.png; feh --bg-fill /tmp/default.png
 
 # keyboard layout
-exec --no-startup-id etxkbmap -layout us -variant altgr-intl
+exec --no-startup-id setxkbmap -layout us -variant altgr-intl
 
 # composite manager (to get vsync improved)
 exec --no-startup-id "compton --backend glx -b"
