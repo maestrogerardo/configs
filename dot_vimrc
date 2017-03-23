@@ -8,7 +8,6 @@ set number
 
 "Highlight current line
 set cursorline
-hi CursorLine cterm=none ctermbg=darkgray
 
 
 "Highlight trailing whitespaces
