@@ -19,3 +19,6 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 "Filename tab completeion
 set wildmode=longest,list,full
 set wildmenu
+
+"Enable powerline
+set laststatus=2
