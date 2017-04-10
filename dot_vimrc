@@ -11,6 +11,11 @@ set cursorline
 hi CursorLine cterm=none ctermbg=darkgray
 
 
+"Highlight misspelled words via underlining
+hi clear SpellBad
+hi SpellBad cterm=underline
+
+
 "Highlight trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
