@@ -6,6 +6,10 @@ syntax on
 set number
 
 
+"Highlight current line
+set cursorline
+
+
 "Highlight trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
