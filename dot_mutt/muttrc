@@ -1,0 +1,69 @@
+# vim: syntax=muttrc
+
+## Several accounts
+set my_account_1 = "webde"
+set my_account_2 = "1und1"
+
+# Login data
+account-hook $my_account_1 'set imap_user="$my_imap_user_webde" imap_pass="$my_imap_pwd_webde"'
+account-hook $my_account_2 'set imap_user="$my_imap_user_1und1" imap_pass="$my_imap_pwd_1und1"'
+
+# Server data
+folder-hook $my_account_1 'source ~/.mutt/webde'
+folder-hook $my_account_2 'source ~/.mutt/1und1'
+
+## Shortcuts
+macro index,pager <f9>  '<sync-mailbox><enter-command>source "~/.mutt/$my_account_1"<enter><change-folder>!<enter>'
+macro index,pager <f10> '<sync-mailbox><enter-command>source "~/.mutt/$my_account_2"<enter><change-folder>!<enter>'
+
+## Default account
+source "~/.mutt/$my_account_2"
+
+## General
+# Store message headers locally to speed things up.
+# If hcache is a folder, Mutt will create sub cache folders for each account
+# which may speeds things up even more. ! ! !
+set header_cache = "~/.cache/mutt"
+
+# Store messages locally to speed things up, like searching message bodies.
+# Can be the same folder as header_cache.
+# This will cost important disk usage according to your e-mail amount.
+set message_cachedir = "~/.cache/mutt"
+
+# Use IMAP IDLE for pushing mail
+set imap_idle = yes
+
+
+## GnuPG
+# See: /usr/share/doc/mutt/examples/gpg.rc.gz
+source "~/.mutt/gpg.rc"
+
+set pgp_default_key="2FC3B45CF02748FBF4C2CD1F098BF7259BA313B7"
+set pgp_use_gpg_agent=yes
+
+set crypt_autosign=yes
+set crypt_opportunistic_encrypt=yes
+set crypt_replysign=yes
+set crypt_replysignencrypted=yes
+set postpone_encrypt=yes
+
+
+## HTML
+auto_view text/html                                      # view html automatically
+alternative_order text/plain text/enriched text/html     # save html for last
+
+
+## Sort
+set sort = threads
+# threads sorted by the date the last message in the thread was received
+set sort_aux = last-date-received
+
+
+## Google Contacts
+set query_command="goobook query '%s'"
+macro index,pager a "<pipe-message>goobook add<return>" "add sender to google contacts"
+bind editor <Tab> complete-query
+
+## Sidebar
+source "~/.mutt/sidebar.rc"
+set sidebar_visible = yes

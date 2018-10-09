@@ -1,0 +1,23 @@
+# vim: syntax=muttrc
+
+source "~/.mutt/webde.pwd.rc"
+
+## IMAP
+set imap_user = "$my_imap_user_webde"
+set imap_pass = "$my_imap_pwd_webde"
+
+set folder = "imap://$imap_user@imap.web.de/"
+set postponed = "+Entwurf"
+set record = "+Gesendet"
+set spoolfile = "+INBOX"
+set trash = "+Trash"
+
+mailboxes = "+INBOX" "+Gesendet" "+Entwurf" "+Trash" "+tips-and-tricks"
+
+
+## SMTP
+set from = "g-a-d@web.de"
+set realname = "Gerhard A. Dittes"
+
+set smtp_url = "smtp://$imap_user@smtp.web.de:587/"
+set smtp_pass = "$imap_pass"

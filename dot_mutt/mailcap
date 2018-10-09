@@ -1,0 +1,8 @@
+# gui browser if $DISPLAY is set...
+text/html; firefox --new-tab %s & sleep 5; test=test -n "$DISPLAY"; nametemplate=%s.html
+
+# ...text browser otherwise
+text/html; w3m -v -F -T text/html %s; nametemplate=%s.html; needsterminal
+
+##auto_view will use the entry with the copiousoutput part:
+text/html; lynx -stdin -dump -force_html ; copiousoutput
