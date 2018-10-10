@@ -33,6 +33,8 @@ set message_cachedir = "~/.cache/mutt"
 # Use IMAP IDLE for pushing mail
 set imap_idle = yes
 
+# us-ascii if possible, utf-8 as fallback
+set send_charset = "us-ascii:utf-8"
 
 ## GnuPG
 # See: /usr/share/doc/mutt/examples/gpg.rc.gz
