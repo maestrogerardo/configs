@@ -2,22 +2,22 @@
 
 ## Several accounts
 set my_account_1 = "webde"
-set my_account_2 = "1und1"
+set my_account_2 = "twode"
 
 # Login data
-account-hook $my_account_1 'set imap_user="$my_imap_user_webde" imap_pass="$my_imap_pwd_webde"'
-account-hook $my_account_2 'set imap_user="$my_imap_user_1und1" imap_pass="$my_imap_pwd_1und1"'
+#account-hook $my_account_1 'set imap_user="$my_imap_user_webde" imap_pass="$my_imap_pwd_webde"'
+#account-hook $my_account_2 'set imap_user="$my_imap_user_1und1" imap_pass="$my_imap_pwd_1und1"'
 
 # Server data
-folder-hook $my_account_1 'source ~/.mutt/webde'
-folder-hook $my_account_2 'source ~/.mutt/1und1'
+folder-hook $my_account_1 'source ~/.mutt/webde.rc'
+folder-hook $my_account_2 'source ~/.mutt/twode.rc'
 
 ## Shortcuts
 macro index,pager <f9>  '<sync-mailbox><enter-command>source "~/.mutt/$my_account_1"<enter><change-folder>!<enter>'
 macro index,pager <f10> '<sync-mailbox><enter-command>source "~/.mutt/$my_account_2"<enter><change-folder>!<enter>'
 
 ## Default account
-source "~/.mutt/$my_account_2"
+source "~/.mutt/$my_account_1"
 
 ## General
 # Store message headers locally to speed things up.
@@ -31,7 +31,7 @@ set header_cache = "~/.cache/mutt"
 set message_cachedir = "~/.cache/mutt"
 
 # Use IMAP IDLE for pushing mail
-set imap_idle = yes
+#set imap_idle = yes
 
 # us-ascii if possible, utf-8 as fallback
 set send_charset = "us-ascii:utf-8"

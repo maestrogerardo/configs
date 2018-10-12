@@ -12,7 +12,7 @@ set sidebar_width = 48
 # Should the mailbox paths be abbreviated?
 set sidebar_short_path = no
 # Number of top-level mailbox path subdirectories to truncate for display
-#set sidebar_component_depth = 0
+set sidebar_component_depth = 0
 # When abbreviating mailbox path names, use any of these characters as path
 # separators. Only the part after the last separators will be shown.
 # For file folders '/' is good. For IMAP folders, often '.' is useful.
@@ -32,7 +32,7 @@ set sidebar_new_mail_only = no
 # around when it reaches the end of the list?
 set sidebar_next_new_wrap = no
 # Show the Sidebar on the right-hand side of the screen
-#set sidebar_on_right = no
+set sidebar_on_right = no
 # The character to use as the divider between the Sidebar and the other NeoMutt
 # panels.
 set sidebar_divider_char = '|'
@@ -87,5 +87,5 @@ color sidebar_flagged red black
 # Color to give mailboxes containing new mail
 color sidebar_new green black
 # Color to give mailboxes containing no new/flagged mail, etc.
-#color sidebar_ordinary color245 default
+color sidebar_ordinary color245 default
 # --------------------------------------------------------------------------

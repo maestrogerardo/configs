@@ -1,0 +1,21 @@
+# vim: syntax=muttrc
+set mbox_type = Maildir
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+set folder = "~/mail/webde"
+set postponed = "+Entwurf"
+set record = "+Gesendet"
+set spoolfile = "+INBOX"
+set trash = "+Trash"
+
+mailboxes = "=INBOX" "=Gesendet" "=Entwurf" "=Trash" "=tips-and-tricks" "=order-stuff" "=bills"
+
+## SMTP
+set from = "g-a-d@web.de"
+set realname = "Gerhard A. Dittes"
+
+source "~/.mutt/webde-creds.rc"
+
+set smtp_url = "smtp://$my_user_webde@smtp.web.de:587/"
+set smtp_pass = "$my_pwd_webde"

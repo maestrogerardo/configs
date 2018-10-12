@@ -1,0 +1,21 @@
+# vim: syntax=muttrc
+set mbox_type = Maildir
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+set folder = "~/mail/twode"
+set postponed = "+Entwürfe"
+set record = "+Gesendete Elemente"
+set spoolfile = "+INBOX"
+set trash = "+Trash"
+
+mailboxes = "=INBOX" "=Gesendete Elemente" "=Entwürfe" "=Trash" "=tips-and-tricks" "=jira-hosting" "=jira-run" "=rocket-chat" "=holiday-and-illness"
+
+## SMTP
+set from = "gerhard.dittes@1und1.de"
+set realname = "Gerhard A. Dittes"
+
+source "~/.mutt/twode-creds.rc"
+
+set smtp_url = "smtp://$my_user_twode@mrint.1and1.com:587/"
+set smtp_pass = "$my_pwd_twode"

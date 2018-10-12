@@ -1,0 +1,4 @@
+# vim: syntax=muttrc
+
+set my_user_webde = "g-a-d"
+set my_pwd_webde = "GADGADGAD"
