@@ -9,7 +9,8 @@ set record = "+Gesendete Elemente"
 set spoolfile = "+INBOX"
 set trash = "+Trash"
 
-mailboxes = "=INBOX" "=Gesendete Elemente" "=Entwürfe" "=Trash" "=tips-and-tricks" "=jira-hosting" "=jira-run" "=rocket-chat" "=holiday-and-illness"
+unmailboxes *
+mailboxes =1und1.de =------------------------ "=INBOX" "=Gesendete Elemente" "=Entwürfe" "=Trash" "=tips-and-tricks" "=jira-hosting" "=jira-run" "=rocket-chat" "=holiday-and-illness"
 
 ## SMTP
 set from = "gerhard.dittes@1und1.de"

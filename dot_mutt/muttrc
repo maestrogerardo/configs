@@ -1,20 +1,20 @@
 # vim: syntax=muttrc
 
 ## Several accounts
-set my_account_1 = "webde"
-set my_account_2 = "twode"
+set my_account_1 = "webde.rc"
+set my_account_2 = "twode.rc"
 
 # Login data
 #account-hook $my_account_1 'set imap_user="$my_imap_user_webde" imap_pass="$my_imap_pwd_webde"'
 #account-hook $my_account_2 'set imap_user="$my_imap_user_1und1" imap_pass="$my_imap_pwd_1und1"'
 
 # Server data
-folder-hook $my_account_1 'source ~/.mutt/webde.rc'
-folder-hook $my_account_2 'source ~/.mutt/twode.rc'
+#folder-hook $my_account_1 'source ~/.mutt/webde.rc'
+#folder-hook $my_account_2 'source ~/.mutt/twode.rc'
 
 ## Shortcuts
-macro index,pager <f9>  '<sync-mailbox><enter-command>source "~/.mutt/$my_account_1"<enter><change-folder>!<enter>'
-macro index,pager <f10> '<sync-mailbox><enter-command>source "~/.mutt/$my_account_2"<enter><change-folder>!<enter>'
+macro index i1  '<sync-mailbox><enter-command>source "~/.mutt/$my_account_1"<enter><change-folder>!<enter>;<check-stats>'
+macro index i2 '<sync-mailbox><enter-command>source "~/.mutt/$my_account_2"<enter><change-folder>!<enter>;<check-stats>'
 
 ## Default account
 source "~/.mutt/$my_account_1"

@@ -9,7 +9,8 @@ set record = "+Gesendet"
 set spoolfile = "+INBOX"
 set trash = "+Trash"
 
-mailboxes = "=INBOX" "=Gesendet" "=Entwurf" "=Trash" "=tips-and-tricks" "=order-stuff" "=bills"
+unmailboxes *
+mailboxes =web.de =------------------------ "=INBOX" "=Gesendet" "=Entwurf" "=Trash" "=tips-and-tricks" "=order-stuff" "=bills"
 
 ## SMTP
 set from = "g-a-d@web.de"
