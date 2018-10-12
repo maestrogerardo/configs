@@ -7,8 +7,8 @@ set number
 
 
 "Highlight current line
-set cursorline
-hi CursorLine cterm=none ctermbg=darkgray
+"set cursorline
+"hi CursorLine cterm=none ctermbg=darkgray
 
 
 "Highlight misspelled words via underlining
