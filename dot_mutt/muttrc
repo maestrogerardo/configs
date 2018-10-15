@@ -50,6 +50,10 @@ set crypt_replysignencrypted=yes
 set postpone_encrypt=yes
 
 
+## Attachments
+set mailcap_path = "~/.mutt/mailcap"
+
+
 ## HTML
 auto_view text/html                                      # view html automatically
 alternative_order text/plain text/enriched text/html     # save html for last
