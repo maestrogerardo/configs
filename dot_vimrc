@@ -4,6 +4,8 @@ syntax on
 
 "Line numbering
 set number
+set relativenumber
+highlight LineNr ctermfg=white ctermbg=darkgray
 
 
 "Highlight current line
