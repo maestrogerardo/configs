@@ -5,7 +5,7 @@ syntax on
 "Line numbering
 set number
 set relativenumber
-highlight LineNr ctermfg=white ctermbg=darkgray
+highlight LineNr ctermfg=darkgray ctermbg=black
 
 
 "Highlight current line
