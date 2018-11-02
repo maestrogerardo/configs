@@ -14,7 +14,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " == Vundle required stuff (end) #1
 
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'Valloric/YouCompleteMe'
 
 " == Vundle required stuff (start) #2
 " All of your Plugins must be added before the following line
