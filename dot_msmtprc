@@ -1,0 +1,21 @@
+defaults
+auth	on
+tls	on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile	~/.msmtp.log
+
+account webde
+host smtp.web.de
+port 587
+from g-a-d@web.de
+user g-a-d
+passwordeval "pass mail/webde | head -1"
+
+account twode
+host mrint.1and1.com
+port 587
+from gerhard.dittes@1und1.de
+user gdittes
+passwordeval "pass mail/twode | head -1"
+
+account default : twode
