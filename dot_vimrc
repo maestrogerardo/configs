@@ -62,6 +62,8 @@ set wildmode=longest,list,full
 set wildmenu
 
 " Prefered line length indication
-set textwidth=72
-set colorcolumn=+1
+set colorcolumn=77
 highlight ColorColumn ctermbg=235
+
+" Some further coloring
+highlight SignColumn ctermbg=black
