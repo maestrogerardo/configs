@@ -4,20 +4,20 @@
 set my_account_1 = "webde.rc"
 set my_account_2 = "twode.rc"
 
-# Login data
-#account-hook $my_account_1 'set imap_user="$my_imap_user_webde" imap_pass="$my_imap_pwd_webde"'
-#account-hook $my_account_2 'set imap_user="$my_imap_user_1und1" imap_pass="$my_imap_pwd_1und1"'
-
-# Server data
-#folder-hook $my_account_1 'source ~/.mutt/webde.rc'
-#folder-hook $my_account_2 'source ~/.mutt/twode.rc'
 
 ## Shortcuts
 macro index i1  '<sync-mailbox><enter-command>source "~/.mutt/$my_account_1"<enter><change-folder>!<enter>;<check-stats>'
 macro index i2 '<sync-mailbox><enter-command>source "~/.mutt/$my_account_2"<enter><change-folder>!<enter>;<check-stats>'
 
+
 ## Default account
 source "~/.mutt/$my_account_1"
+
+
+## SMTP
+set sendmail = "/usr/bin/msmtp"
+set envelope_from = yes
+
 
 ## General
 # Store message headers locally to speed things up.
@@ -70,6 +70,22 @@ set query_command="goobook query '%s'"
 macro index,pager a "<pipe-message>goobook add<return>" "add sender to google contacts"
 bind editor <Tab> complete-query
 
+
 ## Sidebar
 source "~/.mutt/sidebar.rc"
 set sidebar_visible = yes
+
+
+## Index stuff
+set mark_old = no
+
+
+## Editor
+set editor="vim -c 'set spell' \
+                -c 'set spelllang=de' \
+                -c 'set textwidth=67' \
+                -c 'set colorcolumn=+1' \
+                -c 'highlight ColorColumn ctermbg=235'"
+
+## Coloring
+color status brightwhite black #brightblack

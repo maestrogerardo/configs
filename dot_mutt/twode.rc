@@ -4,19 +4,14 @@ set ssl_starttls = yes
 set ssl_force_tls = yes
 
 set folder = "~/mail/twode"
-set postponed = "+Entwürfe"
-set record = "+Gesendete Elemente"
 set spoolfile = "+INBOX"
-set trash = "+Trash"
+set record = "+Gesendete Elemente"
+set postponed = "+Entw&APw-rfe"
+set trash = "+Gel&APY-schte Elemente"
 
 unmailboxes *
-mailboxes =1und1.de =------------------------ "=INBOX" "=Gesendete Elemente" "=Entwürfe" "=Trash" "=tips-and-tricks" "=jira-hosting" "=jira-run" "=rocket-chat" "=holiday-and-illness"
+mailboxes "=1und1.de" "=-------------------------" "=INBOX" "=Gesendete Elemente" "=Entw&APw-rfe" "=Gel&APY-schte Elemente" "=rocket-chat" "=jira-hosting" "=jira-run" "=tips-and-tricks" "=mini-buildd" "=holiday-and-illness"
 
 ## SMTP
 set from = "gerhard.dittes@1und1.de"
 set realname = "Gerhard A. Dittes"
-
-source "~/.mutt/twode-creds.rc"
-
-set smtp_url = "smtp://$my_user_twode@mrint.1and1.com:587/"
-set smtp_pass = "$my_pwd_twode"
