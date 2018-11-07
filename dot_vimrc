@@ -14,6 +14,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " == Vundle required stuff (end) #1
 
+Plugin 'scrooloose/nerdtree'
 "Plugin 'tpope/vim-fugitive'
 "Plugin 'Valloric/YouCompleteMe'
 
