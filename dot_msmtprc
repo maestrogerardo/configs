@@ -14,7 +14,7 @@ passwordeval "pass mail/webde | head -1"
 account twode
 host mrint.1and1.com
 port 587
-from gerhard.dittes@1und1.de
+from gerhard.dittes@ionos.com
 user gdittes
 passwordeval "pass mail/twode | head -1"
 

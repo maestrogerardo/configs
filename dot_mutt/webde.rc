@@ -10,7 +10,7 @@ set postponed = "+Entwurf"
 set trash = "+Papierkorb"
 
 unmailboxes *
-mailboxes =web.de =------------------------- "=INBOX" "=Gesendet" "=Entwurf" "=Papierkorb" "=tips-and-tricks" "=debian" "=kde" "=order-stuff" "=bills"
+mailboxes =WEB.DE =------------------------- "=INBOX" "=Gesendet" "=Entwurf" "=Papierkorb" "=tips-and-tricks" "=debian" "=kde" "=order-stuff" "=bills"
 
 ## SMTP
 set from = "g-a-d@web.de"

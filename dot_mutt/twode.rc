@@ -10,8 +10,8 @@ set postponed = "+Entw&APw-rfe"
 set trash = "+Gel&APY-schte Elemente"
 
 unmailboxes *
-mailboxes "=1und1.de" "=-------------------------" "=INBOX" "=Gesendete Elemente" "=Entw&APw-rfe" "=Gel&APY-schte Elemente" "=rocket-chat" "=jira-hosting" "=jira-run" "=tips-and-tricks" "=mini-buildd" "=holiday-and-illness"
+mailboxes "=1&1-IONOS" "=-------------------------" "=INBOX" "=Gesendete Elemente" "=Entw&APw-rfe" "=Gel&APY-schte Elemente" "=rocket-chat" "=jira-hosting" "=jira-run" "=tips-and-tricks" "=mini-buildd" "=holiday-and-illness"
 
 ## SMTP
-set from = "gerhard.dittes@1und1.de"
+set from = "gerhard.dittes@ionos.com"
 set realname = "Gerhard A. Dittes"
