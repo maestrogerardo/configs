@@ -165,9 +165,17 @@ bindsym $mod+r mode "resize"
 bar {
 	#gad
 	tray_output primary
-	font pango:DejaVu Sans Mono 10
+	#font pango:DejaVu Sans Mono 11
+	font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
+	position bottom
 
-        status_command i3status
+        #status_command i3status
+        status_command i3blocks
+	#i3bar_command i3bar -t
+	colors {
+		background #101010
+		separator #505050
+	}
 }
 
 
@@ -187,25 +195,27 @@ bindsym $mod+shift+x exec "import -window root /tmp/screenshot.png; convert /tmp
 
 # Autostart stuff
 
+exec --no-startup-id systemctl --user start dunst.service
+
+
 # display
 exec --no-startup-id /home/gad/src/gitolite/scripts/Bash/gad-setup-monitor
-exec_always convert /usr/share/images/desktop-base/default -resize 1920x1200 -modulate 100,0,100 /tmp/default.png; feh --bg-fill /tmp/default.png
-
+#exec_always convert /usr/share/images/desktop-base/default -resize 1920x1200 -modulate 100,0,100 /tmp/default.png; feh --bg-fill /tmp/default.png
+#
 # keyboard layout
 exec --no-startup-id setxkbmap -layout us -variant altgr-intl
 
-# composite manager (to get vsync improved)
-exec --no-startup-id "compton --backend glx -b"
-
-# exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id "conky -c ~/src/github/configs/conky.conf"
-# exec --no-startup-id blueman
-exec --no-startup-id clipit
-exec --no-startup-id nm-applet
+#exec --no-startup-id "conky -c ~/src/github/configs/conky.conf"
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # start a powermanager (only) if necessary
 exec --no-startup-id /home/gad/src/gitolite/scripts/Bash/gad-handle-potential-pm-stuff
+# exec --no-startup-id blueman
+exec --no-startup-id glipper
+exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
+
+# composite manager (to get vsync improved)
+exec --no-startup-id nitrogen --restore; sleep 1; compton --backend glx -b
 
 # automatically lock screen after 1 minunte
 exec --no-startup-id xautolock -time 2 -locker "import -window root /tmp/screenshot.png; convert /tmp/screenshot.png -spread 6 /tmp/screenshotblur.png; i3lock -i /tmp/screenshotblur.png"
@@ -220,14 +230,14 @@ exec --no-startup-id "sleep 3; xterm -e ~/src/gitolite/scripts/Bash/gad-autostar
 for_window [class="^.*"] border pixel 3
 
 # Smart Gaps
-smart_gaps on
+#smart_gaps on
 
 # Smart Borders
 smart_borders on
 
 # Some color adjustments
-client.focused_inactive #000000 #000000 #000000 #000000 #000000
-client.unfocused        #000000 #000000 #000000 #000000 #000000
+#client.focused_inactive #000000 #000000 #000000 #000000 #000000
+#client.unfocused        #000000 #000000 #000000 #000000 #000000
 
 # Set inner/outer gaps
 gaps inner 12
