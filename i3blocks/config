@@ -27,12 +27,14 @@
 command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
+color=#06989a
 
 #gad
 [window title]
 command=xdotool getactivewindow getwindowname
-interval=3
-color=#A6D1FA
+interval=1
+color=#34e2e2
+#color=#A6D1FA
 #min_width=1366
 #align=center
 
@@ -66,7 +68,7 @@ interval=30
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 #instance=wlan0
-color=#00FF00
+color=#34e2e2
 interval=10
 separator=false
 
@@ -87,6 +89,7 @@ interval=5
 label=CPU
 interval=10
 min_width=CPU: 100.00%
+color=#34e2e2
 #separator=false
 
 [load_average]
@@ -123,28 +126,33 @@ signal=10
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [temperature]
-label=TEMP
+label=
 interval=10
-color=#ffff00
+color=#34e2e2
 
 # Date Time
 #
+[date]
+command=date '+%a %b %d'
+interval=60
+
 [time]
-command=date '+%Y-%m-%d %H:%M'
+color=#34e2e2
+command=date '+%H:%M'
 interval=5
 
-# Volume indicator
-#
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
-[volume]
-#label=VOL
-label=♪
-instance=Master
-#instance=PCM
-interval=once
-signal=10
+# # Volume indicator
+# #
+# # The first parameter sets the step (and units to display)
+# # The second parameter overrides the mixer selection
+# # See the script for details.
+# [volume]
+# #label=VOL
+# label=♪
+# instance=Master
+# #instance=PCM
+# interval=once
+# signal=10
 
 # Key indicators
 #
