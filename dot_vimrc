@@ -68,4 +68,5 @@ set wildmenu
 highlight ColorColumn ctermbg=235
 
 " Some further coloring
+set background=dark
 highlight SignColumn ctermbg=black
