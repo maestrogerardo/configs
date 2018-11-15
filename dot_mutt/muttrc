@@ -61,7 +61,7 @@ alternative_order text/plain text/enriched text/html
 ## Sort
 #set sort = threads
 # threads sorted by the date the last message in the thread was received
-#set sort_aux = last-date-received
+set sort_aux = last-date-received
 
 
 ## Google Contacts
