@@ -228,6 +228,9 @@ exec --no-startup-id xautolock -time 2 -locker "import -window root /tmp/screens
 # some wm/desktop overarching autostart stuff
 exec --no-startup-id "sleep 3; xterm -e ~/src/gitolite/scripts/Bash/gad-autostart.sh"
 
+# notify daemon
+exec --no-startup-id "systemctl --user start xfce4-notifyd && sleep 8 && notify-send WELCOME ¡maestro!"
+
 
 ### i3-gaps stuff ###
 
