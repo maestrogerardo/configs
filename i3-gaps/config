@@ -168,6 +168,8 @@ bindsym $mod+r mode "resize"
 set $c_bg #101010
 set $c_cyan_dark #06989a
 set $c_cyan_bright #34e2e2
+set $c_red_dark #aa0000
+set $c_red_bright #ff5555
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -189,7 +191,7 @@ bar {
 		focused_workspace  #000000        $c_cyan_bright #000000
 		active_workspace   $c_cyan_bright #000000        $c_cyan_bright
 		inactive_workspace $c_bg          $c_cyan_dark   #000000
-		urgent_workspace   #16A085        #FDF6E3        #E5201D
+		urgent_workspace   #000000        #c_red_bright  #000000
 	}
 }
 
