@@ -165,7 +165,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $c_bg #101010
+set $c_bg #171717
 set $c_cyan_dark #06989a
 set $c_cyan_bright #34e2e2
 set $c_red_dark #aa0000
@@ -191,7 +191,7 @@ bar {
 		focused_workspace  #000000        $c_cyan_bright #000000
 		active_workspace   $c_cyan_bright #000000        $c_cyan_bright
 		inactive_workspace $c_bg          $c_cyan_dark   #000000
-		urgent_workspace   #000000        #c_red_bright  #000000
+		urgent_workspace   #000000        $c_red_bright  #000000
 	}
 }
 
