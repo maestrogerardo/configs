@@ -233,7 +233,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 
 # composite manager (to get vsync improved)
-exec --no-startup-id nitrogen --restore; sleep 1; compton --backend glx -c -C -z -f -D 6 -b
+exec --no-startup-id nitrogen --restore; sleep 1; compton --backend glx -c -C -z -b
 
 # automatically lock screen after 1 minunte
 exec --no-startup-id xautolock -time 2 -locker "import -window root /tmp/screenshot.png; convert /tmp/screenshot.png -spread 6 /tmp/screenshotblur.png; i3lock -i /tmp/screenshotblur.png"
