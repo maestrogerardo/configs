@@ -14,8 +14,8 @@
 * |     | Z | X | C | V | B |                           | N | M | < | > | ? |     |
 * |shift|   |   |   |   |   |                           | n | m | , | . | / |shift|
 * +-----+---+---+---+---+---+   +---+---+   +---+---+   +---+---+---+---+---+-----+
-*       |   | { | } |   |       | ^ |   |   |   | + |       |   |   |   |   |
-*       |ctl| [ | ] |win|       | 6 |ins|   |del| = |       | < | ^ | v | > |
+*       |   |   | { | } |       | ^ |   |   |   | + |       |   |   |   |   |
+*       |ctl|win| [ | ] |       | 6 |ins|   |del| = |       | < | ^ | v | > |
 *       +---+---+---+---+   +---+---+---+   +---+---+---+   +---+---+---+---+
 *                           | s |   |   |   |pge| a | s |
 *                           | p | a |hme|   |up | l | p |
@@ -42,27 +42,27 @@
 [9]>[0]
 [0]>[hyphen]
 [hyphen]>[bspace]
+[=]>[`]
 
 
 * CTRL, ALT (, WIN)
 * *****************
 
-[rctrl]>[=]
-[rwin]>[delete]
-[lctrl]>[6]
-[lalt]>[kp-insert]
+[delete]>[lalt]
+[enter]>[ralt]
+[intl-\]>[lwin]
+[`]>[lctrl]
 
 
 * OTHER 
 * *****
 
-[=]>[`]
+[rctrl]>[=]
+[rwin]>[delete]
+[lctrl]>[6]
+[lalt]>[kp-insert]
 [caps]>[']
 [bspace]>[space]
-[intl-\]>[obrack]
-[left]>[cbrack]
-[right]>[lwin]
-[`]>[lctrl]
-[delete]>[lalt]
-[enter]>[ralt]
+[left]>[obrack]
+[right]>[cbrack]
 [']>[enter]
