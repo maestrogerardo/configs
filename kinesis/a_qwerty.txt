@@ -15,7 +15,7 @@
 * |shift|   |   |   |   |   |                           | n | m | , | . | / |shift|
 * +-----+---+---+---+---+---+   +---+---+   +---+---+   +---+---+---+---+---+-----+
 *       |   |   | { | } |       | ^ |   |   |   | + |       |   |   |   |   |
-*       |ctl|win| [ | ] |       | 6 |del|   |ctl| = |       | < | ^ | v | > |
+*       |ctl|mta| [ | ] |       | 6 |del|   |ctl| = |       | < | ^ | v | > |
 *       +---+---+---+---+   +---+---+---+   +---+---+---+   +---+---+---+---+
 *                           | s |   |   |   |pge| a | s |
 *                           | p | a |hme|   |up | l | p |
@@ -33,7 +33,26 @@
 [cbrack]>[right]
 
 
-* SHIFT NUMBER ROW
+* CTRL, ALT, META
+* ***************
+
+[delete]>[lalt]
+[enter]>[ralt]
+[intl-\]>[lwin]
+[`]>[lctrl]
+[rwin]>[rctrl]
+
+
+* ENTER, SPACE, BSPACE, DELETE
+******************************
+
+[']>[enter]
+[bspace]>[space]
+[hyphen]>[bspace]
+[lalt]>[delete]
+
+
+* NUMBER-ROW SHIFT
 * ****************
 
 [6]>[7]
@@ -41,28 +60,14 @@
 [8]>[9]
 [9]>[0]
 [0]>[hyphen]
-[hyphen]>[bspace]
-[=]>[`]
 
 
-* CTRL, ALT (, WIN)
-* *****************
-
-[delete]>[lalt]
-[enter]>[ralt]
-[intl-\]>[lwin]
-[`]>[lctrl]
-
-
-* OTHER 
+* OTHER
 * *****
 
-[rctrl]>[=]
-[rwin]>[rctrl]
 [lctrl]>[6]
-[lalt]>[delete]
+[rctrl]>[=]
+[=]>[`]
 [caps]>[']
-[bspace]>[space]
 [left]>[obrack]
 [right]>[cbrack]
-[']>[enter]
