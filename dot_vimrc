@@ -75,6 +75,6 @@ set wildmenu
 highlight ColorColumn ctermbg=235
 
 " Some further coloring
-colorscheme gruvbox
+"colorscheme gruvbox
 set background=dark
 "highlight SignColumn ctermbg=black
