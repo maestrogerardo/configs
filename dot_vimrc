@@ -78,3 +78,8 @@ highlight ColorColumn ctermbg=235
 "colorscheme gruvbox
 set background=dark
 "highlight SignColumn ctermbg=black
+
+" Keep working directory clean
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
