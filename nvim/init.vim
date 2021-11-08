@@ -16,12 +16,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
-" gitgutter
-set updatetime=100
-
-" line numbers
-set number relativenumber
-
 " lsp
 lua << EOF
 local nvim_lsp = require('lspconfig')
@@ -71,3 +65,21 @@ for _, lsp in ipairs(servers) do
   }
 end
 EOF
+
+" vim-gitgutter (see vim-plug)
+set updatetime=100
+
+" Some common things
+set number relativenumber
+set ignorecase smartcase
+set clipboard+=unnamedplus
+set mouse=a
+
+" Highlight trailing whitespaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+
+" Filename tab completeion
+set wildmode=longest,list,full
+set wildmenu
