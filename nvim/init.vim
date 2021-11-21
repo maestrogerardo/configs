@@ -8,10 +8,13 @@ endif
 " vim-plug
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'neovim/nvim-lspconfig'
-Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'tpope/vim-fugitive'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
 " Automatically install missing plugins
@@ -69,14 +72,22 @@ for _, lsp in ipairs(servers) do
 end
 EOF
 
-" vim-gitgutter (see vim-plug)
-set updatetime=100
+" gitsigns
+lua << EOF
+require('gitsigns').setup()
+EOF
+
 
 " Telescope
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+" nvim-tree
+lua << EOF
+require'nvim-tree'.setup()
+EOF
 
 " Some common things
 set number relativenumber
