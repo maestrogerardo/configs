@@ -11,6 +11,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Automatically install missing plugins
