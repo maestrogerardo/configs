@@ -16,6 +16,8 @@ Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'itchyny/lightline.vim'
+Plug 'josa42/nvim-lightline-lsp'
 call plug#end()
 
 " Automatically install missing plugins
@@ -89,6 +91,16 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 lua << EOF
 require'nvim-tree'.setup()
 EOF
+
+" lightline-lsp
+let g:lightline = {
+  \   'active': {
+  \     'left': [[  'lsp_info', 'lsp_hints', 'lsp_errors', 'lsp_warnings', 'lsp_ok' ], [ 'lsp_status' ]]
+  \   }
+  \ }
+
+" register compoments:
+call lightline#lsp#register()
 
 " Some common things
 set number relativenumber
