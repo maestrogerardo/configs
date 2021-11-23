@@ -18,6 +18,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/nvim-lightline-lsp'
+Plug 'gruvbox-community/gruvbox'
 call plug#end()
 
 " Automatically install missing plugins
@@ -90,6 +91,9 @@ lua << EOF
 require'nvim-tree'.setup()
 EOF
 
+" lightline
+colorscheme gruvbox
+
 " lightline-lsp
 let g:lightline = {
   \   'active': {
@@ -107,7 +111,7 @@ set clipboard+=unnamedplus
 set mouse=a
 
 " Highlight trailing whitespaces
-highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace ctermfg=9 ctermbg=9 guifg=Red guibg=Red
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
