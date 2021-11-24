@@ -110,11 +110,21 @@ set ignorecase smartcase
 set clipboard+=unnamedplus
 set mouse=a
 
-" Highlight trailing whitespaces
-highlight ExtraWhitespace ctermfg=9 ctermbg=9 guifg=Red guibg=Red
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-
 " Filename tab completeion
 set wildmode=longest,list,full
 set wildmenu
+
+" Highlight trailing whitespaces
+highlight ExtraWhitespaceTrailing ctermbg=9 guibg=Red
+match ExtraWhitespaceTrailing /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespaceTrailing /\s\+$/
+autocmd InsertEnter * match ExtraWhitespaceTrailing /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespaceTrailing /\s\+$/
+
+" Highlight indentation whitespaces
+highlight ExtraWhitespaceIndent ctermbg=236 guibg=#303030
+2match ExtraWhitespaceIndent /^\t*\zs \+/
+autocmd BufWinEnter * 2match ExtraWhitespaceIndent /^\t*\zs \+/
+autocmd InsertLeave * 2match ExtraWhitespaceIndent /^\t*\zs \+/
+
+autocmd BufWinLeave * call clearmatches()
