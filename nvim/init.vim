@@ -19,6 +19,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/nvim-lightline-lsp'
 Plug 'gruvbox-community/gruvbox'
+Plug 'dstein64/nvim-scrollview', { 'branch': 'main' }
 call plug#end()
 
 " Automatically install missing plugins
@@ -103,6 +104,9 @@ let g:lightline = {
 
 " register compoments:
 call lightline#lsp#register()
+
+" scrollview
+let g:scrollview_current_only = 1
 
 " Some common things
 set number relativenumber
