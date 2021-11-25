@@ -149,7 +149,8 @@ set wildmode=longest,list,full
 set wildmenu
 
 " Highlight trailing whitespaces
-highlight ExtraWhitespaceTrailing ctermbg=9 guibg=Red
+highlight ExtraWhitespaceTrailing ctermbg=239 guibg=DarkGray
+
 match ExtraWhitespaceTrailing /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespaceTrailing /\s\+$/
 autocmd InsertEnter * match ExtraWhitespaceTrailing /\s\+\%#\@<!$/
