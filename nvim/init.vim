@@ -119,7 +119,14 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " nvim-tree
 lua << EOF
-require'nvim-tree'.setup()
+require'nvim-tree'.setup({
+	open_on_tab = true,
+	auto_close = true,
+	update_cwd = true,
+	diagnostics = {
+		enable = true,
+	}
+})
 EOF
 
 " lightline
