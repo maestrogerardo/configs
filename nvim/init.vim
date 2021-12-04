@@ -13,7 +13,7 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lua/plenary.nvim'
@@ -145,6 +145,9 @@ call lightline#lsp#register()
 
 " scrollview
 let g:scrollview_current_only = 1
+
+" Comment.nvim
+lua require('Comment').setup()
 
 " Some common things
 set number relativenumber
