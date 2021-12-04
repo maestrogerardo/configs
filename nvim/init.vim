@@ -118,6 +118,7 @@ nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " nvim-tree
+nnoremap <leader>t :NvimTreeToggle<CR>
 lua << EOF
 require'nvim-tree'.setup({
 	open_on_tab = true,
