@@ -22,6 +22,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'josa42/nvim-lightline-lsp'
 Plug 'gruvbox-community/gruvbox'
 Plug 'dstein64/nvim-scrollview', { 'branch': 'main' }
+Plug 'neomake/neomake'
 call plug#end()
 
 " Automatically install missing plugins
