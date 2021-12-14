@@ -17,7 +17,6 @@ Plug 'numToStr/Comment.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'akinsho/bufferline.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/nvim-lightline-lsp'
@@ -127,11 +126,6 @@ require'nvim-tree'.setup({
 		enable = true,
 	}
 })
-EOF
-
-" bufferline
-lua << EOF
-require("bufferline").setup{}
 EOF
 
 " lightline
