@@ -54,5 +54,6 @@
 ;; they are implemented.
 
 ;; gad
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
