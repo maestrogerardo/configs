@@ -59,3 +59,4 @@
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
 (setq lsp-semantic-tokens-enable t)
+(setq evil-want-fine-undo t)
