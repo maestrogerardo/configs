@@ -18,4 +18,4 @@ from gerhard.dittes@ionos.com
 user gdittes
 passwordeval "pass mail/twode | head -1"
 
-account default : twode
+account default : webde
