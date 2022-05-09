@@ -60,3 +60,4 @@
 (add-hook 'c++-mode-hook 'lsp)
 (setq lsp-semantic-tokens-enable t)
 (setq evil-want-fine-undo t)
+(add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
