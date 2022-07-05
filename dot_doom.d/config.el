@@ -56,7 +56,8 @@
 
 ;; gad
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
-(menu-bar-mode)
+(menu-bar-mode 1)
+(scroll-bar-mode 1)
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
 (setq lsp-semantic-tokens-enable t)
