@@ -66,3 +66,11 @@
 
 ;; warn if altering history off already pushed things (on certain branches)
 (setq magit-published-branches '("origin/master" "origin/sdl2"))
+
+;; custom "magit capital C"
+(setq magit-commit-add-log-insert-function 'gad_magit-commit-log-insert)
+
+(defun gad_magit-commit-log-insert (buffer file defun)
+  (with-current-buffer buffer
+    (goto-char (point-min))
+    (insert (format "%s: " file))))
