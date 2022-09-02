@@ -64,5 +64,5 @@
 (setq evil-want-fine-undo t)
 (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
 
-;; gb
+;; warn if altering history off already pushed things (on certain branches)
 (setq magit-published-branches '("origin/master" "origin/sdl2"))
