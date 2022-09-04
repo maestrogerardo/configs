@@ -73,4 +73,6 @@
 (defun gad_magit-commit-add-log-insert (buffer file defun)
   (with-current-buffer buffer
     (magit-commit-add-log-insert buffer file defun)
-    (cond ((re-search-backward (format "* %s: " file) nil t) (replace-match (format "%s: " file))))))
+    (if defun
+        (cond ((re-search-backward (format "* %s (%s): " file defun) nil t) (replace-match (format "%s (%s): " file defun))))
+      (cond ((re-search-backward (format "* %s: " file) nil t) (replace-match (format "%s: " file)))))))
