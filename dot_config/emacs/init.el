@@ -28,5 +28,11 @@
 (defun gad_magit-commit-add-log-insert (buffer file defun)
   (with-current-buffer buffer
     (magit-commit-add-log-insert buffer file defun)
-    (cond ((re-search-backward (format "* %s: " file) nil t) (replace-match (format "%s: " file))))))
+    (if defun
+        (cond ((re-search-backward (format "* %s (%s): " file defun) nil t)
+	       ;; (message (format "gad: buffer %s -> replacing \"* %s (%s): \"..." buffer file defun))
+	       (replace-match (format "%s (%s): " file defun))))
+      (cond ((re-search-backward (format "* %s: " file) nil t)
+	     ;; (message (format "gad: buffer %s -> replacing \"* %s: \"..." buffer file))
+	     (replace-match (format "%s: " file)))))))
 (setq magit-commit-add-log-insert-function 'gad_magit-commit-add-log-insert)
