@@ -8,6 +8,7 @@
 
 (global-display-line-numbers-mode 1)
 (menu-bar-mode 1)
+(tool-bar-mode nil)
 (scroll-bar-mode 1)
 
 (add-hook 'c-mode-hook 'lsp)
