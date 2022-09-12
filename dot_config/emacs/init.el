@@ -25,9 +25,8 @@
 (add-function :before-while whitespace-enable-predicate 'ab-enable-whitespace-mode)
 
 ;; custom "magit capital C"
-(setq magit-commit-add-log-insert-function 'gad_magit-commit-add-log-insert)
-
 (defun gad_magit-commit-add-log-insert (buffer file defun)
   (with-current-buffer buffer
     (magit-commit-add-log-insert buffer file defun)
     (cond ((re-search-backward (format "* %s: " file) nil t) (replace-match (format "%s: " file))))))
+(setq magit-commit-add-log-insert-function 'gad_magit-commit-add-log-insert)
