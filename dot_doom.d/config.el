@@ -85,3 +85,8 @@
 ;; Disable WS mode for certain special modes
 (defun ab-enable-whitespace-mode () (not (derived-mode-p 'magit-mode)))
 (add-function :before-while whitespace-enable-predicate 'ab-enable-whitespace-mode)
+
+;; use real tabs
+(setq-default indent-tabs-mode t)
+(setq-default tab-width 4) ; Assuming you want your tabs to be four spaces wide
+(defvaralias 'c-basic-offset 'tab-width)
