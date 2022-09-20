@@ -1,7 +1,4 @@
 ;; gad
-(setq user-full-name "Gerhard A. Dittes"
-      user-mail-address "maestro.gerardo@gmail.com")
-
 (setq lsp-semantic-tokens-enable t)
 
 (setq inhibit-startup-screen t)
