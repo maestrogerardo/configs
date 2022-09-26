@@ -90,3 +90,7 @@
 (setq-default indent-tabs-mode t)
 (setq-default tab-width 4) ; Assuming you want your tabs to be four spaces wide
 (defvaralias 'c-basic-offset 'tab-width)
+
+;; mini-buildd support
+(setq mbd-archives '(ui))
+(load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/examples/mini-buildd-utils/mini-buildd.el")
