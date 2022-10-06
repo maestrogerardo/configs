@@ -33,3 +33,8 @@
 	     ;; (message (format "gad: buffer %s -> replacing \"* %s: \"..." buffer file))
 	     (replace-match (format "%s: " file)))))))
 (setq magit-commit-add-log-insert-function 'gad_magit-commit-add-log-insert)
+
+;; use real tabs
+(setq-default indent-tabs-mode t)
+(setq-default tab-width 4) ; Assuming you want your tabs to be four spaces wide
+(defvaralias 'c-basic-offset 'tab-width)
