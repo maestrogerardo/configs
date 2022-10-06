@@ -12,6 +12,19 @@
 (add-hook 'c++-mode-hook 'lsp)
 (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
 
+;; custom "magit capital C"
+(defun gad_magit-commit-add-log-insert (buffer file defun)
+  (with-current-buffer buffer
+    (magit-commit-add-log-insert buffer file defun)
+    (if defun
+        (cond ((re-search-backward (format "* %s (%s): " file defun) nil t)
+			   ;; (message (format "gad: buffer %s -> replacing \"* %s (%s): \"..." buffer file defun))
+			   (replace-match (format "%s (%s): " file defun))))
+      (cond ((re-search-backward (format "* %s: " file) nil t)
+			 ;; (message (format "gad: buffer %s -> replacing \"* %s: \"..." buffer file))
+			 (replace-match (format "%s: " file)))))))
+(setq magit-commit-add-log-insert-function 'gad_magit-commit-add-log-insert)
+
 ;; Whitespace stuff
 ;; No marking, no extra handling of normal spaces, make tabs only slightly lighter
 (setq whitespace-style '(face trailing tabs newline empty indentation space-after-tab space-before-tab))
@@ -20,19 +33,6 @@
 ;; Disable WS mode for certain special modes
 (defun ab-enable-whitespace-mode () (not (derived-mode-p 'magit-mode)))
 (add-function :before-while whitespace-enable-predicate 'ab-enable-whitespace-mode)
-
-;; custom "magit capital C"
-(defun gad_magit-commit-add-log-insert (buffer file defun)
-  (with-current-buffer buffer
-    (magit-commit-add-log-insert buffer file defun)
-    (if defun
-        (cond ((re-search-backward (format "* %s (%s): " file defun) nil t)
-	       ;; (message (format "gad: buffer %s -> replacing \"* %s (%s): \"..." buffer file defun))
-	       (replace-match (format "%s (%s): " file defun))))
-      (cond ((re-search-backward (format "* %s: " file) nil t)
-	     ;; (message (format "gad: buffer %s -> replacing \"* %s: \"..." buffer file))
-	     (replace-match (format "%s: " file)))))))
-(setq magit-commit-add-log-insert-function 'gad_magit-commit-add-log-insert)
 
 ;; use real tabs
 (setq-default indent-tabs-mode t)
