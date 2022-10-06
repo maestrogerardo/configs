@@ -42,3 +42,9 @@
 ;; mini-buildd support
 (setq mbd-archives '(ui))
 (load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/examples/mini-buildd-utils/mini-buildd.el")
+
+;; MELPA stuff
+(require 'package)
+(add-to-list 'package-archives
+             '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
