@@ -41,7 +41,7 @@
 
 ;; mini-buildd support
 (setq mbd-archives '(ui))
-(load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/examples/mini-buildd-utils/mini-buildd.el")
+(load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/examples/mini-buildd-utils/mini-buildd.el" "missing-ok")
 
 ;; MELPA stuff
 (require 'package)
