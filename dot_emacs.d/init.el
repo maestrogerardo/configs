@@ -1,6 +1,7 @@
 ;; gad
 (setq lsp-semantic-tokens-enable t)
 (setq inhibit-startup-screen t)
+(setq column-number-mode t)
 
 (setq-default fill-column 72)
 
