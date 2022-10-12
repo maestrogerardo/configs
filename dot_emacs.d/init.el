@@ -1,7 +1,8 @@
 ;; gad
 (setq lsp-semantic-tokens-enable t)
-
 (setq inhibit-startup-screen t)
+
+(setq-default fill-column 72)
 
 (global-display-line-numbers-mode 1)
 (menu-bar-mode 1)
