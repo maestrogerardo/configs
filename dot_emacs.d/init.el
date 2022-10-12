@@ -13,6 +13,7 @@
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
 (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; custom "magit capital C"
 (defun gad_magit-commit-add-log-insert (buffer file defun)
