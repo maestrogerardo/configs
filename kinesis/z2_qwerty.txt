@@ -47,19 +47,23 @@
 * pr = program
 
 
-* ALTGR
-* *****
+* ALT, ALTGR, META
+* ****************
 
-[rwin]>[ralt]
-
-
-* META, HOME
-* **********
-
+[rwin]>[lalt]
+[pup]>[ralt]
 [home]>[lwin]
-[intl-\]>[home]
 
 
-* ESC
-*****
-[caps]>[escape]
+* HOME, END, PAGE UP, PAGE DOWN
+* *****************************
+
+[end]>[home]
+[pdown]>[end]
+[`]>[pup]
+[intl-\]>[pdown]
+
+
+* BACKTICK
+**********
+[caps]>[`]
