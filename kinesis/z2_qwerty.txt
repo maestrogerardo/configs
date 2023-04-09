@@ -14,8 +14,8 @@
 * |     | Z | X | C | V | B |                           | N | M | < | > | ? |     |
 * |shift|   |   |   |   |   |                           |   |   | , | . | / |shift|
 * +-----+---+---+---+---+---+   +---+---+   +---+---+   +---+---+---+---+---+-----+
-*       | ~ |   |   |   |       |   |   |   |alt|   |       |   |   | { | } |
-*       | ` |hme| < | > |       |ctl|alt|   |gr |ctl|       | ^ | v | [ | ] |
+*       | ~ |   |   |   |       |   |   |   |   |   |       |   |   | { | } |
+*       | ` |hme| < | > |       |ctl|alt|   |alt|ctl|       | ^ | v | [ | ] |
 *       +---+---+---+---+   +---+---+---+   +---+---+---+   +---+---+---+---+
 *                           | b |   |   |   |   | e | s |
 *                           | s | d |mta|   |pup| n | p |
@@ -47,23 +47,19 @@
 * pr = program
 
 
-* ALT, ALTGR, META
-* ****************
+* ALT, META
+* *********
 
-[rwin]>[lalt]
-[pup]>[ralt]
+[rwin]>[ralt]
 [home]>[lwin]
 
 
-* HOME, END, PAGE UP, PAGE DOWN
-* *****************************
+* HOME
+* ****
 
-[end]>[home]
-[pdown]>[end]
-[`]>[pup]
-[intl-\]>[pdown]
+[intl-\]>[home]
 
 
-* BACKTICK
-**********
-[caps]>[`]
+* ESCAPE
+* ******
+[caps]>[escape]
