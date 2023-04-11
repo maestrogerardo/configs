@@ -1,6 +1,11 @@
 * CUSTOM KINESIS QUERTY BASED LAYOUT
 * **********************************
 
+*  st       qw dw ma pc wi cT                           re mS pM pR vo v- v+
+* +--+--+--+--+--+--+--+--+--+                         +--+--+--+--+--+--+--+--+--+
+* |Es|F1|F2|F3|F4|F5|F6|F7|F8|                         |F9|Ft|Fe|Ft|pS|PD|PU|kP|pr|
+* +--+--+--+--+--+--+--+--+--+                         +--+--+--+--+--+--+--+--+--+
+*
 * +-----+---+---+---+---+---+                           +---+---+---+---+---+-----+
 * |  +  | ! | @ | # | $ | % |                           | ^ | & | * | ( | ) |  _  |
 * |  =  | 1 | 2 | 3 | 4 | 5 |                           | 6 | 7 | 8 | 9 | 0 |  -  |
@@ -18,18 +23,12 @@
 *       |hme|end| < | > |       |ctl|alt|   |alt|ctl|       | ^ | v | [ | ] |
 *       +---+---+---+---+   +---+---+---+   +---+---+---+   +---+---+---+---+
 *                           | b |   |   |   |   | e | s |
-*                           | s | d |pup|   |mta| n | p |
+*                           | s | d |mta|   |mta| n | p |
 *                           | p | e +---+   +---+ t | a |
-*                           | c | l |   |   |alt| e | c |
-*                           | e |   |pdn|   |gr | r | e |
+*                           | c | l |(r)|   |(r)| e | c |
+*                           | e |   |alt|   |alt| r | e |
 *                           +---+---+---+   +---+---+---+
 
-
-*  st       qw dw ma pc wi cT                           re mS pM pR vo v- v+
-* +--+--+--+--+--+--+--+--+--+                         +--+--+--+--+--+--+--+--+--+
-* |Es|F1|F2|F3|F4|F5|F6|F7|F8|                         |F9|Ft|Fe|Ft|pS|sL|pB|kP|pr|
-* +--+--+--+--+--+--+--+--+--+                         +--+--+--+--+--+--+--+--+--+
-*
 * st = status
 * qw = qwerty
 * dw = dworak
@@ -41,19 +40,19 @@
 * mS = macro speed
 * pM = program macro
 * vo = volume/print scm
-* v- = lower volume / scroll lock
-* v+ = raise volume / pause break
+* v- = lower volume / (scroll lock) -> PAGE DOWN
+* v+ = raise volume / (pause break) -> PAGE UP
 * kP = keypad
 * pr = program
 
 
-* ALT, ALTGR, META
-* ****************
+* ALT, META
+* *********
 
 [rwin]>[lalt]
 [pup]>[rwin]
 [home]>[lwin]
-[pdown]>[ralt]
+[pdown]>[⎄ralt]
 [end]>[ralt]
 
 
