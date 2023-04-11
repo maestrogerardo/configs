@@ -52,15 +52,15 @@
 [rwin]>[lalt]
 [pup]>[rwin]
 [home]>[lwin]
-[pdown]>[⎄ralt]
+[pdown]>[ralt]
 [end]>[ralt]
 
 
 * PAGE UP/DOWN
 * ************
 
-[pause]>[pup]
-[scroll]>[pdown]
+[pause]>[pdown]
+[scroll]>[pup]
 
 
 * HOME, END
