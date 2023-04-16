@@ -3,6 +3,9 @@
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
 
+;; backup in one place. flat, no tree structure
+(setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
+
 (setq-default fill-column 72)
 
 (global-display-line-numbers-mode 1)
