@@ -26,6 +26,15 @@
 
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
+
+;; Go
+(setq gofmt-command "goimports") ;; also add imports automatically
+(defun gad_go-mode-hook ()
+  ;; run gofmt before saving
+  (add-hook 'before-save-hook 'gofmt-before-save))
+(add-hook 'go-mode-hook 'gad_go-mode-hook)
+(add-hook 'go-mode-hook #'eglot-ensure)
+
 (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
