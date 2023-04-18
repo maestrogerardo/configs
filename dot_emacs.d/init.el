@@ -13,6 +13,8 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 1)
 
+;; C-z by default suspends the session, which is... incredibly useless (at least for graphical mode)
+(global-set-key (kbd "C-z") 'undo)
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
 (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
