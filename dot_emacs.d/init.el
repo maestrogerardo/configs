@@ -15,6 +15,15 @@
 
 ;; C-z by default suspends the session, which is... incredibly useless (at least for graphical mode)
 (global-set-key (kbd "C-z") 'undo)
+
+;; Recompiling
+(global-set-key (kbd "C-4") 'gad_recompile)
+(defun gad_recompile ()
+  "Interrupt current compilation and recompile."
+  (interactive)
+  (ignore-errors (kill-compilation))
+  (recompile))
+
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
 (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
