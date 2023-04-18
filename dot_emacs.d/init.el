@@ -24,6 +24,7 @@
   (ignore-errors (kill-compilation))
   (recompile))
 
+;; C, C++
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
 
@@ -35,6 +36,7 @@
 (add-hook 'go-mode-hook 'gad_go-mode-hook)
 (add-hook 'go-mode-hook #'eglot-ensure)
 
+;; Git
 (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
 
 ;; always use flycheck
