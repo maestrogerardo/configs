@@ -13,9 +13,6 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 1)
 
-;; C-z by default suspends the session, which is... incredibly useless (at least for graphical mode)
-(global-set-key (kbd "C-z") 'undo)
-
 ;; Recompiling
 (global-set-key (kbd "C-4") 'gad_recompile)
 (defun gad_recompile ()
