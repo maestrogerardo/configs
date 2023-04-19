@@ -12,6 +12,7 @@
 (menu-bar-mode 1)
 (tool-bar-mode 0)
 (scroll-bar-mode 1)
+(xterm-mouse-mode 1)
 
 ;; Recompiling
 (global-set-key (kbd "C-4") 'gad_recompile)
