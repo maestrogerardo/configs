@@ -34,6 +34,9 @@
 (add-hook 'go-mode-hook 'gad_go-mode-hook)
 (add-hook 'go-mode-hook #'eglot-ensure)
 
+;; Python
+(add-hook 'python-mode-hook #'eglot-ensure)
+
 ;; Git
 (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
 
