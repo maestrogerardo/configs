@@ -40,6 +40,13 @@
 ;; Git
 (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
 
+;; Bash completion (eg. for "M-x shell")
+(autoload 'bash-completion-dynamic-complete
+  "bash-completion"
+  "BASH completion hook")
+(add-hook 'shell-dynamic-complete-functions
+          'bash-completion-dynamic-complete)
+
 ;; always use flycheck
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
