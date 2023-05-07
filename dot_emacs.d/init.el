@@ -1,5 +1,5 @@
 ;; gad
-(setq lsp-semantic-tokens-enable t)
+;;(setq lsp-semantic-tokens-enable t)
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
 
@@ -24,8 +24,8 @@
   (recompile))
 
 ;; C, C++
-(add-hook 'c-mode-hook 'lsp)
-(add-hook 'c++-mode-hook 'lsp)
+(add-hook 'c-mode-hook #'eglot-ensure)
+(add-hook 'c++-mode-hook #'eglot-ensure)
 
 ;; Go
 (setq gofmt-command "goimports") ;; also add imports automatically
