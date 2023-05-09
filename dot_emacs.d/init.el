@@ -13,8 +13,14 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 1)
 (xterm-mouse-mode 1)
+
+;; restore split winodows settings
 (winner-mode 1)
+
+;; auto completion
 (global-company-mode 1)
+
+;; tree-sitter
 (global-tree-sitter-mode 1)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
