@@ -15,6 +15,8 @@
 (xterm-mouse-mode 1)
 (winner-mode 1)
 (global-company-mode 1)
+(global-tree-sitter-mode 1)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
 ;; Recompiling
 (global-set-key (kbd "C-4") 'gad_recompile)
