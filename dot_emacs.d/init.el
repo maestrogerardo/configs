@@ -98,26 +98,17 @@
 (setq mbd-archives '(ui))
 (load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/examples/mini-buildd-utils/mini-buildd.el" "missing-ok")
 
+;; font
+(set-face-attribute 'default nil :font "DejaVu Sans Mono-9.5")
+
+;; mode-line font
+(set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10.5")
+
 ;; MELPA stuff
 (require 'package)
 (add-to-list 'package-archives
              '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
-;; Well, current custom stuff added by Emacs itself...
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(global-display-line-numbers-mode t)
- '(package-selected-packages
-   '(tree-sitter-langs tree-sitter eglot projectile magit flycheck dpkg-dev-el company bash-completion))
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 105 :width normal)))))
+(setq package-selected-packages
+ '(tree-sitter-langs tree-sitter eglot projectile magit flycheck dpkg-dev-el company bash-completion))
