@@ -59,10 +59,10 @@
 
 ;; Use English and German in parallel for spell cheking
 (with-eval-after-load "ispell"
-	(setq ispell-program-name "hunspell")
-	(setq ispell-dictionary "en_US,de_DE")
-	(ispell-set-spellchecker-params)
-	(ispell-hunspell-add-multi-dic "en_US,de_DE"))
+  (setq ispell-program-name "hunspell")
+  (setq ispell-dictionary "en_US,de_DE")
+  (ispell-set-spellchecker-params)
+  (ispell-hunspell-add-multi-dic "en_US,de_DE"))
 
 ;; always use flycheck
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -111,4 +111,4 @@
 (package-initialize)
 
 (setq package-selected-packages
- '(tree-sitter-langs tree-sitter eglot projectile magit flycheck dpkg-dev-el company bash-completion))
+	  '(tree-sitter-langs tree-sitter eglot projectile magit flycheck dpkg-dev-el company bash-completion))
