@@ -1,5 +1,21 @@
-;; gad
-;;(setq lsp-semantic-tokens-enable t)
+;; MELPA stuff
+(require 'package)
+(add-to-list 'package-archives '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
+(setq package-selected-packages
+      '(
+	bash-completion
+	company
+	dpkg-dev-el
+	eglot
+	flycheck
+	magit
+	projectile
+	tree-sitter
+	tree-sitter-langs
+	yascroll
+	))
+
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
 
@@ -9,10 +25,14 @@
 (setq-default fill-column 72)
 
 (global-display-line-numbers-mode 1)
-(menu-bar-mode 1)
+(menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 1)
 (xterm-mouse-mode 1)
+
+;; non-GUI scroll bar
+;;(global-yascroll-bar-mode 1)
+;;(setq yascroll:delay-to-hide nil)
 
 ;; restore split winodows settings
 (winner-mode 1)
@@ -34,7 +54,9 @@
 
 ;; C, C++
 (add-hook 'c-mode-hook #'eglot-ensure)
+(add-hook 'c-mode-hook (lambda () (setq truncate-lines t)))
 (add-hook 'c++-mode-hook #'eglot-ensure)
+(add-hook 'c++-mode-hook (lambda () (setq truncate-lines t)))
 
 ;; Go
 (setq gofmt-command "goimports") ;; also add imports automatically
@@ -73,11 +95,11 @@
     (magit-commit-add-log-insert buffer file defun)
     (if defun
         (cond ((re-search-backward (format "* %s (%s): " file defun) nil t)
-			   ;; (message (format "gad: buffer %s -> replacing \"* %s (%s): \"..." buffer file defun))
-			   (replace-match (format "%s (%s): " file defun))))
+	       ;; (message (format "gad: buffer %s -> replacing \"* %s (%s): \"..." buffer file defun))
+	       (replace-match (format "%s (%s): " file defun))))
       (cond ((re-search-backward (format "* %s: " file) nil t)
-			 ;; (message (format "gad: buffer %s -> replacing \"* %s: \"..." buffer file))
-			 (replace-match (format "%s: " file)))))))
+	     ;; (message (format "gad: buffer %s -> replacing \"* %s: \"..." buffer file))
+	     (replace-match (format "%s: " file)))))))
 (setq magit-commit-add-log-insert-function 'gad_magit-commit-add-log-insert)
 
 ;; Whitespace stuff
@@ -99,26 +121,7 @@
 (load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/examples/mini-buildd-utils/mini-buildd.el" "missing-ok")
 
 ;; font
-(set-face-attribute 'default nil :font "DejaVu Sans Mono-9.5")
+(set-face-attribute 'default nil :font "DejaVu Sans Mono-9")
 
 ;; mode-line font
-(set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10.5")
-
-;; MELPA stuff
-(require 'package)
-(add-to-list 'package-archives
-             '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
-(package-initialize)
-
-(setq package-selected-packages
-	  '(
-		bash-completion
-		company
-		dpkg-dev-el
-		eglot
-		flycheck
-		magit
-		projectile
-		tree-sitter
-		tree-sitter-langs
-		))
+(set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10")
