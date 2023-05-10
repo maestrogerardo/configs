@@ -111,4 +111,14 @@
 (package-initialize)
 
 (setq package-selected-packages
-	  '(tree-sitter-langs tree-sitter eglot projectile magit flycheck dpkg-dev-el company bash-completion))
+	  '(
+		bash-completion
+		company
+		dpkg-dev-el
+		eglot
+		flycheck
+		magit
+		projectile
+		tree-sitter
+		tree-sitter-langs
+		))
