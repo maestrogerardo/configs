@@ -121,7 +121,7 @@
 (load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/examples/mini-buildd-utils/mini-buildd.el" "missing-ok")
 
 ;; font
-(set-face-attribute 'default nil :font "DejaVu Sans Mono-9")
+(set-face-attribute 'default nil :font "DejaVu Sans Mono-9.5")
 
 ;; mode-line font
 (set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10")
