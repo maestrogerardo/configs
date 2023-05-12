@@ -33,10 +33,6 @@
 (scroll-bar-mode 1)
 (xterm-mouse-mode 1)
 
-;; non-GUI scroll bar
-;;(global-yascroll-bar-mode 1)
-;;(setq yascroll:delay-to-hide nil)
-
 ;; restore split winodows settings
 (winner-mode 1)
 
