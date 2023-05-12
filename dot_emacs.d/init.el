@@ -83,6 +83,7 @@
 (global-git-gutter-mode +1)
  ;; better recognizable using light backgrounds
 (set-face-foreground 'git-gutter:added "darkgreen")
+(custom-set-variables '(git-gutter:update-interval 5))
 
 ;; Bash completion (eg. for "M-x shell")
 (autoload 'bash-completion-dynamic-complete
