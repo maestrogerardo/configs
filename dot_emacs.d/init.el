@@ -55,7 +55,9 @@
 (defun gad_activateCodingStuff ()
   (setq truncate-lines t)
   (display-line-numbers-mode 1)
-  (eglot-ensure))
+  (eglot-ensure)
+  (add-hook 'eglot-managed-mode-hook (lambda () (eglot-inlay-hints-mode -1)))
+  )
 
 ;; Elisp
 (add-hook 'lisp-mode-hook 'gad_activateCodingStuff)
