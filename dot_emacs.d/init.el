@@ -51,15 +51,19 @@
   (ignore-errors (kill-compilation))
   (recompile))
 
-(defun gad_activateCodingStuff ()
+(defun gad_activateCodingStuffBasic ()
   (setq truncate-lines t)
   (display-line-numbers-mode 1)
+  )
+
+(defun gad_activateCodingStuff ()
+  (gad_activateCodingStuffBasic)
   (eglot-ensure)
   (add-hook 'eglot-managed-mode-hook (lambda () (eglot-inlay-hints-mode -1)))
   )
 
 ;; Elisp
-(add-hook 'lisp-mode-hook 'gad_activateCodingStuff)
+(add-hook 'emacs-lisp-mode-hook 'gad_activateCodingStuffBasic)
 
 ;; C, C++
 (add-hook 'c-mode-hook 'gad_activateCodingStuff)
