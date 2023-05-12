@@ -25,7 +25,6 @@
 
 (setq-default fill-column 72)
 
-(global-display-line-numbers-mode 1)
 (menu-bar-mode 1)
 (tool-bar-mode 0)
 (scroll-bar-mode 1)
@@ -53,11 +52,17 @@
   (ignore-errors (kill-compilation))
   (recompile))
 
+(defun gad_activateCodingStuff ()
+  (setq truncate-lines t)
+  (display-line-numbers-mode 1)
+  (eglot-ensure))
+
+;; Elisp
+(add-hook 'lisp-mode-hook 'gad_activateCodingStuff)
+
 ;; C, C++
-(add-hook 'c-mode-hook #'eglot-ensure)
-(add-hook 'c-mode-hook (lambda () (setq truncate-lines t)))
-(add-hook 'c++-mode-hook #'eglot-ensure)
-(add-hook 'c++-mode-hook (lambda () (setq truncate-lines t)))
+(add-hook 'c-mode-hook 'gad_activateCodingStuff)
+(add-hook 'c++-mode-hook 'gad_activateCodingStuff)
 
 ;; Go
 (setq gofmt-command "goimports") ;; also add imports automatically
@@ -65,10 +70,10 @@
   ;; run gofmt before saving
   (add-hook 'before-save-hook 'gofmt-before-save))
 (add-hook 'go-mode-hook 'gad_go-mode-hook)
-(add-hook 'go-mode-hook #'eglot-ensure)
+(add-hook 'go-mode-hook 'gad_activateCodingStuff)
 
 ;; Python
-(add-hook 'python-mode-hook #'eglot-ensure)
+(add-hook 'python-mode-hook 'gad_activateCodingStuff)
 
 ;; Git
 (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
