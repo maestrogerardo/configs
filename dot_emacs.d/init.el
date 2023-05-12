@@ -10,6 +10,7 @@
 		eglot
 		flycheck
 		git-gutter
+		go-mode
 		magit
 		projectile
 		tree-sitter
