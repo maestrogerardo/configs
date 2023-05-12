@@ -122,13 +122,6 @@
 ;; Whitespace stuff
 ;; No marking, no extra handling of normal spaces, make tabs only slightly lighter
 (setq whitespace-style '(face trailing tabs newline empty indentation space-after-tab space-before-tab))
-(custom-set-faces
- '(whitespace-tab ((t (:background "#f7f7f7"))))
- '(whitespace-indentation ((t (:background "#ebebeb"))))
- '(whitespace-space-after-tab ((t (:background "#ebebeb"))))
- '(whitespace-space-before-tab ((t (:background "#ebebeb"))))
- )
-
 (global-whitespace-mode 1)
 
 ;; Disable WS mode for certain special modes
@@ -149,3 +142,10 @@
 
 ;; mode-line font
 (set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10")
+
+(custom-set-faces
+ '(whitespace-tab ((t (:background "#f7f7f7"))))
+ '(whitespace-indentation ((t (:background "#ebebeb"))))
+ '(whitespace-space-after-tab ((t (:background "#ebebeb"))))
+ '(whitespace-space-before-tab ((t (:background "#ebebeb"))))
+ )
