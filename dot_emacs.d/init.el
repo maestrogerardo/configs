@@ -15,6 +15,8 @@
 		projectile
 		tree-sitter
 		tree-sitter-langs
+		treemacs
+		treemacs-magit
 		yascroll
 		))
 
