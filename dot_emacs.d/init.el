@@ -143,6 +143,9 @@
 ;; mode-line font
 (set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10")
 
+;; org-mode
+(setq org-log-done t)
+
 (custom-set-faces
  '(whitespace-tab ((t (:background "#f7f7f7"))))
  '(whitespace-indentation ((t (:background "#ebebeb"))))
