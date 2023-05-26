@@ -12,6 +12,7 @@
 		git-gutter
 		go-mode
 		magit
+		php-mode
 		projectile
 		tree-sitter
 		tree-sitter-langs
