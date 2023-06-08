@@ -68,6 +68,10 @@
 ;; Elisp
 (add-hook 'emacs-lisp-mode-hook 'gad_activateCodingStuffBasic)
 
+;; Shell
+(add-hook 'sh-mode-hook 'gad_activateCodingStuffBasic)
+(add-hook 'sh-mode-hook 'flycheck-mode)
+
 ;; C, C++
 (add-hook 'c-mode-hook 'gad_activateCodingStuff)
 (add-hook 'c++-mode-hook 'gad_activateCodingStuff)
