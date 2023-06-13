@@ -103,6 +103,11 @@
 (add-hook 'shell-dynamic-complete-functions
           'bash-completion-dynamic-complete)
 
+;; org
+;;(setq org-log-done t)
+(eval-after-load "org"
+  '(require 'ox-md nil t))
+
 ;; Use English and German in parallel for spell cheking
 (with-eval-after-load "ispell"
   (setq ispell-program-name "hunspell")
@@ -149,9 +154,6 @@
 
 ;; mode-line font
 (set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10")
-
-;; org-mode
-;;(setq org-log-done t)
 
 (custom-set-faces
  '(whitespace-tab ((t (:background "#f7f7f7"))))
