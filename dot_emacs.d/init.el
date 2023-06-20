@@ -39,6 +39,10 @@
 ;; restore split winodows settings
 (winner-mode 1)
 
+;; dictionary
+(global-set-key (kbd "C-c l") #'dictionary-lookup-definition)
+(setq dictionary-server "dict.org")
+
 ;; auto completion
 (global-company-mode 1)
 
