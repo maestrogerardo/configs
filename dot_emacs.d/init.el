@@ -91,6 +91,16 @@
 ;; Python
 (add-hook 'python-mode-hook 'gad_activateCodingStuff)
 
+;; autoconf; automake; makefile, makefile-gmake
+(add-hook 'autoconf-mode-hook 'gad_activateCodingStuffBasic)
+(add-hook 'autoconf-mode-hook 'flycheck-mode)
+(add-hook 'makefile-automake-mode-hook 'gad_activateCodingStuffBasic)
+(add-hook 'makefile-automake-mode-hook 'flycheck-mode)
+(add-hook 'makefile-mode-hook 'gad_activateCodingStuffBasic)
+(add-hook 'makefile-mode-hook 'flycheck-mode)
+(add-hook 'makefile-gmake-mode-hook 'gad_activateCodingStuffBasic)
+(add-hook 'makefile-gmake-mode-hook 'flycheck-mode)
+
 ;; Git
 (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
 
