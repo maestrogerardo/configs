@@ -11,6 +11,7 @@
 		flycheck
 		git-gutter
 		go-mode
+		langtool
 		magit
 		php-mode
 		projectile
@@ -38,6 +39,14 @@
 
 ;; restore split winodows settings
 (winner-mode 1)
+
+;; langtool
+(setq langtool-language-tool-jar "~/dvl/progs/languagetool/languagetool-commandline.jar")
+(global-set-key "\C-x4w" 'langtool-check)
+(global-set-key "\C-x4W" 'langtool-check-done)
+(global-set-key "\C-x4l" 'langtool-switch-default-language)
+(global-set-key "\C-x44" 'langtool-show-message-at-point)
+(global-set-key "\C-x4c" 'langtool-interactive-correction)
 
 ;; dictionary
 (global-set-key (kbd "C-c l") #'dictionary-lookup-definition)
