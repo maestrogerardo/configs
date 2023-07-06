@@ -43,6 +43,9 @@
 ;; restore split winodows settings
 (winner-mode 1)
 
+;; e.g. switch cpp <-> hpp
+(global-set-key (kbd "C-<tab>") 'ff-find-other-file)
+
 ;; langtool
 (setq langtool-language-tool-jar "~/dvl/progs/languagetool/languagetool-commandline.jar")
 (global-set-key "\C-x4w" 'langtool-check)
