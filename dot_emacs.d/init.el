@@ -20,6 +20,7 @@
 		tree-sitter-langs
 		treemacs
 		treemacs-magit
+		vertico
 		which-key
 		yascroll
 		))
@@ -37,6 +38,7 @@
 (scroll-bar-mode 1)
 (xterm-mouse-mode 1)
 (which-key-mode 1)
+(vertico-mode 1)
 
 ;; restore split winodows settings
 (winner-mode 1)
