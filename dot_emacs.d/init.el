@@ -6,6 +6,7 @@
       '(
 		bash-completion
 		company
+		debian-el
 		dpkg-dev-el
 		eglot
 		flycheck
