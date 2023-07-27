@@ -35,6 +35,7 @@
 (setq-default fill-column 72)
 
 (menu-bar-mode 1)
+(tool-bar-mode 1)
 (scroll-bar-mode 1)
 (xterm-mouse-mode 1)
 (which-key-mode 1)
