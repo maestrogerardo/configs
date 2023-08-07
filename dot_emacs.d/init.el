@@ -8,7 +8,6 @@
 		company
 		debian-el
 		dpkg-dev-el
-		eglot
 		flycheck
 		git-gutter
 		go-mode
