@@ -84,6 +84,11 @@
   (add-hook 'eglot-managed-mode-hook (lambda () (eglot-inlay-hints-mode -1)))
   )
 
+(defun gad_activateCssCodingStuff ()
+  (gad_activateCodingStuffBasic)
+  (rainbow-mode 1)
+  )
+
 ;; Elisp
 (add-hook 'emacs-lisp-mode-hook 'gad_activateCodingStuffBasic)
 
@@ -105,6 +110,9 @@
 
 ;; Python
 (add-hook 'python-mode-hook 'gad_activateCodingStuff)
+
+;; CSS
+(add-hook 'css-mode-hook 'gad_activateCssCodingStuff)
 
 ;; autoconf; automake; makefile, makefile-gmake
 (add-hook 'autoconf-mode-hook 'gad_activateCodingStuffBasic)
