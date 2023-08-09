@@ -1,0 +1,5 @@
+# show the distribution of packages
+aptitude::UI::Package-Display-Format "%c%a%M%S %p %t %i %Z %v# %V#";
+
+# group installed packages into an Origin->Archive hierarchy
+aptitude::UI::Default-Grouping "task,status,pattern(~S~i~O, ?true ||),pattern(~S~i~A, ?true ||),section(subdirs,passthrough),section(topdir)";
