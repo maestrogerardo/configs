@@ -178,15 +178,9 @@
 (setq mbd-archives '(ui))
 (load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/share/emacs/site-lisp/mini-buildd-changelog-mode.el" "missing-ok")
 
-;; font
-(set-face-attribute 'default nil :font "DejaVu Sans Mono-9.5")
-
-;; mode-line font
-(set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10")
-
 (custom-set-faces
- '(whitespace-tab ((t (:background "#f7f7f7"))))
+ '(default ((t (:family "Noto Mono" :foundry "GOOG" :slant normal :weight regular :height 101 :width normal))))
  '(whitespace-indentation ((t (:background "#ebebeb"))))
  '(whitespace-space-after-tab ((t (:background "#ebebeb"))))
  '(whitespace-space-before-tab ((t (:background "#ebebeb"))))
- )
+ '(whitespace-tab ((t (:background "#f7f7f7")))))
