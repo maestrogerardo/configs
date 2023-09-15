@@ -15,7 +15,6 @@
 		php-mode
 		projectile
 		rainbow-mode
-		tree-sitter
 		tree-sitter-langs
 		treemacs
 		treemacs-magit
