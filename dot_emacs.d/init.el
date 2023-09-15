@@ -23,6 +23,12 @@
 		yascroll
 		))
 
+;; emacs < 29 might miss:
+;;  - eglot
+;;  - tree-sitter
+;; and want (currently not working for 29):
+;;  - git-gutter
+
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
 
