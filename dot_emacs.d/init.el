@@ -79,7 +79,6 @@
 
 (defun gad_activateCodingStuffBasic ()
   (setq truncate-lines t)
-  (display-line-numbers-mode 1)
   ;; use real tabs
   (setq-default indent-tabs-mode t)
   (setq-default tab-width 4)
