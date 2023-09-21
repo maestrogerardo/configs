@@ -19,6 +19,7 @@
 		treemacs
 		treemacs-magit
 		vertico
+		web-mode
 		which-key
 		yascroll
 		))
@@ -181,6 +182,7 @@
 ;; mini-buildd support
 (setq mbd-archives '(ui))
 (load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/share/emacs/site-lisp/mini-buildd-changelog-mode.el" "missing-ok")
+(load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/share/emacs/site-lisp/mini-buildd-web-mode.el" "missing-ok")
 
 (custom-set-faces
  '(default ((t (:family "Noto Mono" :foundry "GOOG" :slant normal :weight regular :height 101 :width normal))))
