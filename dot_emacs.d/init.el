@@ -185,7 +185,7 @@
 (load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/share/emacs/site-lisp/mini-buildd-web-mode.el" "missing-ok")
 
 (custom-set-faces
- '(default ((t (:family "Noto Mono" :foundry "GOOG" :slant normal :weight regular :height 101 :width normal))))
+ '(default ((t (:family "Noto Mono" :foundry "GOOG" :slant normal :weight regular :height 95 :width normal))))
  '(whitespace-indentation ((t (:background "#ebebeb"))))
  '(whitespace-space-after-tab ((t (:background "#ebebeb"))))
  '(whitespace-space-before-tab ((t (:background "#ebebeb"))))
