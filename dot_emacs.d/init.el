@@ -38,6 +38,13 @@
 
 (setq-default fill-column 72)
 
+;; one line scrolling
+;; keep cursor at same position when scrolling
+(setq scroll-preserve-screen-position 1)
+;; scroll window up/down by one line
+(global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
+(global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
+
 (menu-bar-mode 1)
 (tool-bar-mode 1)
 (scroll-bar-mode 1)
