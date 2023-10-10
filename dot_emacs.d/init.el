@@ -51,7 +51,9 @@
 (xterm-mouse-mode 1)
 (which-key-mode 1)
 (vertico-mode 1)
-(pixel-scroll-precision-mode 1)
+
+;; Eamcs >= 29
+(if (>= emacs-major-version 29) (pixel-scroll-precision-mode 1))
 
 ;; restore split winodows settings
 (winner-mode 1)
