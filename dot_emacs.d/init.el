@@ -33,6 +33,7 @@
 
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
+(setq compilation-scroll-output t)
 
 ;; backup in one place. flat, no tree structure
 (setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
