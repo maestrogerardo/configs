@@ -53,8 +53,8 @@
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
 
-(menu-bar-mode 1)
-(tool-bar-mode 1)
+(menu-bar-mode 0)
+(tool-bar-mode 0)
 (scroll-bar-mode 1)
 (xterm-mouse-mode 1)
 (which-key-mode 1)
