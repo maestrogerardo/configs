@@ -128,10 +128,10 @@
 (add-hook 'shell-dynamic-complete-functions
           'bash-completion-dynamic-complete)
 
-;; org
+;; org mode
 ;;(setq org-log-done t)
-(eval-after-load "org"
-  '(require 'ox-md nil t))
+(eval-after-load "org" '(require 'ox-md nil t))
+(load "/home/gad/dvl/src/github/ox-jira.el/ox-jira.el" "missing-ok")
 
 ;; Use English and German in parallel for spell cheking
 (with-eval-after-load "ispell"
