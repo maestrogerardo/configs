@@ -26,6 +26,7 @@
 		yascroll
 		request
 		gptel
+		chatgpt-shell
 		))
 (defvar gad-selected-packages-lt-emacs-29)
 (setq gad-selected-packages-lt-emacs-29
