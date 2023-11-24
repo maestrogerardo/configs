@@ -25,7 +25,6 @@
 		which-key
 		yascroll
 		request
-		gptel
 		chatgpt-shell
 		))
 (defvar gad-selected-packages-lt-emacs-29)
