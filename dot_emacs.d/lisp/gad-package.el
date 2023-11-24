@@ -1,4 +1,5 @@
 (require 'package)
+(add-to-list 'package-archives '("MELPA" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 (defvar gad-selected-packages)
