@@ -7,6 +7,7 @@
       '(
 		auto-dim-other-buffers
 		bash-completion
+		chatgpt-shell
 		company
 		debian-el
 		dpkg-dev-el
@@ -17,6 +18,7 @@
 		php-mode
 		projectile
 		rainbow-mode
+		request
 		tree-sitter-langs
 		treemacs
 		treemacs-magit
@@ -24,15 +26,13 @@
 		web-mode
 		which-key
 		yascroll
-		request
-		chatgpt-shell
 		))
 (defvar gad-selected-packages-lt-emacs-29)
 (setq gad-selected-packages-lt-emacs-29
 	  '(
 		eglot
-		tree-sitter
 		git-gutter
+		tree-sitter
 		))
 
 (if (>= emacs-major-version 29)
