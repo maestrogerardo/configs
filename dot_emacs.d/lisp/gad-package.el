@@ -24,6 +24,7 @@
 		which-key
 		yascroll
 		request
+		gptel
 		))
 (defvar gad-selected-packages-lt-emacs-29)
 (setq gad-selected-packages-lt-emacs-29
