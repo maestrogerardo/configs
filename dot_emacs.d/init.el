@@ -165,6 +165,11 @@
 (defun ab-enable-whitespace-mode () (not (derived-mode-p 'magit-mode)))
 (add-function :before-while whitespace-enable-predicate 'ab-enable-whitespace-mode)
 
+;; chatgpt-shell; use "pass" password manager to retrieve api key
+(setq chatgpt-shell-openai-key
+      (lambda ()
+        (nth 0 (process-lines "pass" "show" "openai/key"))))
+
 ;; mini-buildd support
 (setq mbd-archives '(ui))
 (load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/share/emacs/site-lisp/mini-buildd-changelog-mode.el" "missing-ok")
