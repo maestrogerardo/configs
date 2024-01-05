@@ -68,7 +68,8 @@
 
   (setq truncate-lines t)
   (rainbow-mode)
-  (rainbow-delimiters-mode)
+  (ignore-errors
+    (rainbow-delimiters-mode))
   )
 
 (defun gad_c-and-cpp-mode-hook ()
