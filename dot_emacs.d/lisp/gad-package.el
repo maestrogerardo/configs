@@ -17,6 +17,7 @@
 		magit
 		php-mode
 		projectile
+		rainbow-delimiters
 		rainbow-mode
 		request
 		tree-sitter-langs
