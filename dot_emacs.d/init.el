@@ -56,43 +56,29 @@
 (global-tree-sitter-mode 1)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
-;; Recompiling
-(global-set-key (kbd "C-4") 'gad_recompile)
-(defun gad_recompile ()
-  "Interrupt current compilation and recompile."
-  (interactive)
-  (ignore-errors (kill-compilation))
-  (recompile))
+;; * * * C O D I N G   S T U F F * * *
+;; activate coding stuff automatically in most programming modes
+(add-hook 'prog-mode-hook #'gad_activateCodingStuff)
 
-(defun gad_activateCodingStuffBasic ()
-  (setq truncate-lines t)
+(defun gad_activateCodingStuff ()
   ;; use real tabs
   (setq-default indent-tabs-mode t)
   (setq-default tab-width 4)
   (defvaralias 'c-basic-offset 'tab-width)
+
+  (setq truncate-lines t)
+  (rainbow-mode)
+  (rainbow-delimiters-mode)
   )
 
-(defun gad_activateCodingStuff ()
-  (gad_activateCodingStuffBasic)
+(defun gad_c-and-cpp-mode-hook ()
   (eglot-ensure)
   (add-hook 'eglot-managed-mode-hook (lambda () (eglot-inlay-hints-mode -1)))
   )
 
-(defun gad_activateCssCodingStuff ()
-  (gad_activateCodingStuffBasic)
-  (rainbow-mode 1)
-  )
-
-;; Elisp
-(add-hook 'emacs-lisp-mode-hook 'gad_activateCodingStuffBasic)
-
-;; Shell
-(add-hook 'sh-mode-hook 'gad_activateCodingStuffBasic)
-(add-hook 'sh-mode-hook 'flycheck-mode)
-
 ;; C, C++
-(add-hook 'c-mode-hook 'gad_activateCodingStuff)
-(add-hook 'c++-mode-hook 'gad_activateCodingStuff)
+(add-hook 'c-mode-hook #'gad_c-and-cpp-mode-hook)
+(add-hook 'c++-mode-hook #'gad_c-and-cpp-mode-hook)
 
 ;; Go
 (setq gofmt-command "goimports") ;; also add imports automatically
@@ -100,23 +86,23 @@
   ;; run gofmt before saving
   (add-hook 'before-save-hook 'gofmt-before-save))
 (add-hook 'go-mode-hook 'gad_go-mode-hook)
-(add-hook 'go-mode-hook 'gad_activateCodingStuff)
 
-;; Python
-(add-hook 'python-mode-hook 'gad_activateCodingStuff)
-
-;; CSS
-(add-hook 'css-mode-hook 'gad_activateCssCodingStuff)
+;; Shell
+(add-hook 'sh-mode-hook 'flycheck-mode)
 
 ;; autoconf; automake; makefile, makefile-gmake
-(add-hook 'autoconf-mode-hook 'gad_activateCodingStuffBasic)
 (add-hook 'autoconf-mode-hook 'flycheck-mode)
-(add-hook 'makefile-automake-mode-hook 'gad_activateCodingStuffBasic)
 (add-hook 'makefile-automake-mode-hook 'flycheck-mode)
-(add-hook 'makefile-mode-hook 'gad_activateCodingStuffBasic)
 (add-hook 'makefile-mode-hook 'flycheck-mode)
-(add-hook 'makefile-gmake-mode-hook 'gad_activateCodingStuffBasic)
 (add-hook 'makefile-gmake-mode-hook 'flycheck-mode)
+
+;; recompile shortcut
+(global-set-key (kbd "C-4") 'gad_recompile)
+(defun gad_recompile ()
+  "Interrupt current compilation and recompile."
+  (interactive)
+  (ignore-errors (kill-compilation))
+  (recompile))
 
 ;; Git
 (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
