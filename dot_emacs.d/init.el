@@ -16,12 +16,14 @@
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
 
+;; some modes for everywhere
 (menu-bar-mode 1)
 (tool-bar-mode 0)
 (scroll-bar-mode 1)
 (xterm-mouse-mode 1)
 (which-key-mode 1)
 (vertico-mode 1)
+(global-diff-hl-mode)
 
 ;; auto-dim-other-buffers
 (add-hook 'after-init-hook (lambda ()
