@@ -9,6 +9,7 @@
 		chatgpt-shell
 		company
 		debian-el
+		diff-hl
 		dpkg-dev-el
 		flycheck
 		go-mode
@@ -31,7 +32,6 @@
 (setq gad-selected-packages-lt-emacs-29
 	  '(
 		eglot
-		git-gutter
 		tree-sitter
 		))
 
