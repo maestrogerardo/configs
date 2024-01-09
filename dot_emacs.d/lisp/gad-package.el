@@ -24,6 +24,7 @@
 		treemacs
 		treemacs-magit
 		vertico
+		vterm
 		web-mode
 		which-key
 		yascroll
