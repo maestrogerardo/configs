@@ -36,6 +36,10 @@
 ;; restore split winodows settings
 (winner-mode 1)
 
+;; windmove
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
+
 ;; e.g. switch cpp <-> hpp
 (global-set-key (kbd "C-<tab>") 'ff-find-other-file)
 
