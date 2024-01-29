@@ -26,9 +26,7 @@
 (global-diff-hl-mode)
 
 ;; auto-dim-other-buffers
-(add-hook 'after-init-hook (lambda ()
-							 (when (fboundp 'auto-dim-other-buffers-mode)
-							   (auto-dim-other-buffers-mode t))))
+(add-hook 'after-init-hook (lambda () (when (fboundp 'auto-dim-other-buffers-mode) (auto-dim-other-buffers-mode t))))
 
 ;; Eamcs >= 29
 (if (>= emacs-major-version 29) (pixel-scroll-precision-mode 1))
@@ -66,9 +64,7 @@
 
   (setq truncate-lines t)
   (rainbow-mode)
-  (ignore-errors
-    (rainbow-delimiters-mode))
-  )
+  (ignore-errors (rainbow-delimiters-mode)))
 
 (defun gad_c-and-cpp-mode-hook ()
   (eglot-ensure)
@@ -110,8 +106,7 @@
 (autoload 'bash-completion-dynamic-complete
   "bash-completion"
   "BASH completion hook")
-(add-hook 'shell-dynamic-complete-functions
-          'bash-completion-dynamic-complete)
+(add-hook 'shell-dynamic-complete-functions 'bash-completion-dynamic-complete)
 
 ;; org mode
 ;;(setq org-log-done t)
@@ -126,20 +121,18 @@
 	(ispell-set-spellchecker-params)
 	(ispell-hunspell-add-multi-dic "en_US,de_DE,es_ES")))
 
-
-
 ;; always use flycheck
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; custom "magit capital C"
 (defun gad_magit-commit-add-log-insert (buffer file defun)
   (with-current-buffer buffer
-    (magit-commit-add-log-insert buffer file defun)
-    (if defun
-        (cond ((re-search-backward (format "* %s (%s): " file defun) nil t)
+	(magit-commit-add-log-insert buffer file defun)
+	(if defun
+		(cond ((re-search-backward (format "* %s (%s): " file defun) nil t)
 			   ;; (message (format "gad: buffer %s -> replacing \"* %s (%s): \"..." buffer file defun))
 			   (replace-match (format "%s (%s): " file defun))))
-      (cond ((re-search-backward (format "* %s: " file) nil t)
+	  (cond ((re-search-backward (format "* %s: " file) nil t)
 			 ;; (message (format "gad: buffer %s -> replacing \"* %s: \"..." buffer file))
 			 (replace-match (format "%s: " file)))))))
 (setq magit-commit-add-log-insert-function 'gad_magit-commit-add-log-insert)
@@ -154,9 +147,7 @@
 (add-function :before-while whitespace-enable-predicate 'ab-enable-whitespace-mode)
 
 ;; chatgpt-shell; use "pass" password manager to retrieve api key
-(setq chatgpt-shell-openai-key
-      (lambda ()
-        (nth 0 (process-lines "pass" "show" "openai/key"))))
+(setq chatgpt-shell-openai-key (lambda () (nth 0 (process-lines "pass" "show" "openai/key"))))
 
 ;; mini-buildd support
 (setq mbd-archives '(ui))
