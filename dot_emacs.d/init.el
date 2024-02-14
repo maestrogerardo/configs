@@ -1,5 +1,8 @@
 (load "/home/gad/dvl/src/github/configs/dot_emacs.d/lisp/gad-package.el")
 
+;; theme
+(load-theme 'modus-vivendi-tinted t)
+
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
 (setq compilation-scroll-output t)

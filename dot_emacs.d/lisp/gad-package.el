@@ -14,6 +14,7 @@
 		go-mode
 		langtool
 		magit
+		modus-themes
 		php-mode
 		projectile
 		rainbow-delimiters
