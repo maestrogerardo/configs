@@ -149,7 +149,7 @@
 
 (custom-set-faces
  '(default ((t (:family "Noto Mono" :foundry "GOOG" :slant normal :weight regular :height 95 :width normal))))
- '(whitespace-indentation ((t (:background "#ebebeb"))))
- '(whitespace-space-after-tab ((t (:background "#ebebeb"))))
- '(whitespace-space-before-tab ((t (:background "#ebebeb"))))
- '(whitespace-tab ((t (:background "#f7f7f7")))))
+ '(whitespace-indentation ((t (:background "#292D48"))))
+ '(whitespace-space-after-tab ((t (:background "#292D48"))))
+ '(whitespace-space-before-tab ((t (:background "#292D48"))))
+ '(whitespace-tab ((t (:background "#1A1D32")))))
