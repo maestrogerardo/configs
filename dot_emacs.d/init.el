@@ -18,9 +18,6 @@
 (vertico-mode 1)
 (global-diff-hl-mode)
 
-;; auto-dim-other-buffers
-(add-hook 'after-init-hook (lambda () (when (fboundp 'auto-dim-other-buffers-mode) (auto-dim-other-buffers-mode t))))
-
 ;; Eamcs >= 29
 (if (>= emacs-major-version 29) (pixel-scroll-precision-mode 1))
 
@@ -149,7 +146,6 @@
 
 (custom-set-faces
  '(default ((t (:family "Noto Mono" :foundry "GOOG" :slant normal :weight regular :height 95 :width normal))))
- '(auto-dim-other-buffers-face ((t (:background "#f0f0f0"))))
  '(whitespace-indentation ((t (:background "#ebebeb"))))
  '(whitespace-space-after-tab ((t (:background "#ebebeb"))))
  '(whitespace-space-before-tab ((t (:background "#ebebeb"))))

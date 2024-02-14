@@ -4,7 +4,6 @@
 (defvar gad-selected-packages)
 (setq gad-selected-packages
       '(
-		auto-dim-other-buffers
 		bash-completion
 		chatgpt-shell
 		company
