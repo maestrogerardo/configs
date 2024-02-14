@@ -12,7 +12,7 @@
 ;; some modes for everywhere
 (menu-bar-mode 0)
 (tool-bar-mode 0)
-(scroll-bar-mode 1)
+(scroll-bar-mode 0)
 (xterm-mouse-mode 1)
 (which-key-mode 1)
 (vertico-mode 1)
