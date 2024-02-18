@@ -7,6 +7,7 @@
 		bash-completion
 		chatgpt-shell
 		company
+		consult
 		debian-el
 		diff-hl
 		dpkg-dev-el
