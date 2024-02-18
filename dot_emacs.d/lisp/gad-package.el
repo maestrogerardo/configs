@@ -14,6 +14,7 @@
 		go-mode
 		langtool
 		magit
+		marginalia
 		php-mode
 		projectile
 		rainbow-delimiters

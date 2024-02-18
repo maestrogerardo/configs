@@ -16,6 +16,7 @@
 (xterm-mouse-mode 1)
 (which-key-mode 1)
 (vertico-mode 1)
+(marginalia-mode 1)
 (global-diff-hl-mode)
 
 ;; Eamcs >= 29
