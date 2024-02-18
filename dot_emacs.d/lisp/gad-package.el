@@ -15,6 +15,7 @@
 		langtool
 		magit
 		marginalia
+		orderless
 		php-mode
 		projectile
 		rainbow-delimiters
