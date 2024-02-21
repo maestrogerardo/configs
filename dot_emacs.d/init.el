@@ -53,7 +53,7 @@
   (setq-default indent-tabs-mode t)
   (setq-default tab-width 4)
   (defvaralias 'c-basic-offset 'tab-width)
-
+  (display-line-numbers-mode 1)
   (setq truncate-lines t)
   (rainbow-mode)
   (ignore-errors (rainbow-delimiters-mode)))
