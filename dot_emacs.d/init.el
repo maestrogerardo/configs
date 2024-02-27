@@ -1,3 +1,4 @@
+(load "/home/gad/dvl/src/github/configs/dot_emacs.d/lisp/gad-pre-init.el")
 (load "/home/gad/dvl/src/github/configs/dot_emacs.d/lisp/gad-package.el")
 
 (setq inhibit-startup-screen t)
@@ -140,6 +141,16 @@
 
 ;; chatgpt-shell; use "pass" password manager to retrieve api key
 (setq chatgpt-shell-openai-key (lambda () (nth 0 (process-lines "pass" "show" "openai/key"))))
+
+;; special setup for "work purposes" only
+(if (boundp 'gad-work-setup)
+    (progn (message "%s" "work setup: perhaps use copilot")
+		   (add-to-list 'load-path "/home/gad/dvl/src/github/copilot.el")
+		   (require 'copilot)
+		   (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+		   (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+		   (setq package-selected-packages (append gad-selected-packages gad-selected-packages-work)))
+  (progn (message "%s" "default setup: do never ever use copilot")))
 
 ;; mini-buildd support
 (setq mbd-archives '(ui))
