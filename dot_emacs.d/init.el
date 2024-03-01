@@ -1,6 +1,9 @@
 (load "/home/gad/dvl/src/github/configs/dot_emacs.d/lisp/gad-pre-init.el")
 (load "/home/gad/dvl/src/github/configs/dot_emacs.d/lisp/gad-package.el")
 
+;; start maximized
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
 (setq compilation-scroll-output t)
