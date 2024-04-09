@@ -17,6 +17,7 @@
 		go-mode
 		langtool
 		magit
+		markdown-mode
 		marginalia
 		orderless
 		php-mode
