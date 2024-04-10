@@ -109,7 +109,7 @@
 (eval-after-load "org" '(require 'ox-md nil t))
 (load "/home/gad/dvl/src/github/ox-jira.el/ox-jira.el" "missing-ok")
 
-;; Use English and German in parallel for spell cheking
+;; Use English, German and Spanish in parallel for spell cheking
 (ignore-errors
   (with-eval-after-load "ispell"
 	(setq ispell-program-name "hunspell")
