@@ -48,6 +48,10 @@
 (global-tree-sitter-mode 1)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
+;; vterm
+(setq vterm-max-scrollback 100000)
+(setq vterm-kill-buffer-on-exit t)
+
 ;; * * * C O D I N G   S T U F F * * *
 ;; activate coding stuff automatically in most programming modes
 (add-hook 'prog-mode-hook #'gad_activateCodingStuff)
