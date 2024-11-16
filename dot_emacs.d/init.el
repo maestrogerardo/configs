@@ -164,6 +164,21 @@
 (load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/share/emacs/site-lisp/mini-buildd-changelog-mode.el" "missing-ok")
 (load "/home/gad/dvl/src/salsa/mini-buildd/mini-buildd/share/emacs/site-lisp/mini-buildd-web-mode.el" "missing-ok")
 
+;; gb
+(defun gad-gb ()
+  "Set up my preferred initial window layout for gb dev."
+  (interactive)
+  (delete-other-windows)
+  (let ((main-dir "/home/gad/dvl/src/lundgren/gb-lpe/"))
+	(find-file main-dir)
+	(magit-status)
+	(split-window-below)
+	(other-window 1)
+	(vterm)
+	(treemacs)
+	(find-file "src/Main.cpp"))
+  )
+
 (custom-set-faces
  '(default ((t (:family "Noto Mono" :foundry "GOOG" :slant normal :weight regular :height 95 :width normal))))
  '(whitespace-indentation ((t (:background "#ebebeb"))))
