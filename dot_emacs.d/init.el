@@ -175,7 +175,8 @@
 	(vterm)
 	(treemacs)
 	(find-file "src/Main.cpp"))
-  )
+  (let ((default-directory "/home/gad/dvl/src/lundgren/gb-lpe/"))
+	(compile "make -k -j$(nproc)")))
 
 (custom-set-faces
  '(default ((t (:family "Noto Mono" :foundry "GOOG" :slant normal :weight regular :height 95 :width normal))))
