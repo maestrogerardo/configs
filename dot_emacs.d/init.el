@@ -168,6 +168,7 @@
   (delete-other-windows)
   (let ((main-dir "/home/gad/dvl/src/lundgren/gb-lpe/"))
 	(find-file main-dir)
+	(split-window-right)
 	(magit-status)
 	(split-window-below)
 	(other-window 1)
