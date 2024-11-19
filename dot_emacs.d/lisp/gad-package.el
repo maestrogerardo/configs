@@ -7,7 +7,6 @@
 (setq gad-selected-packages
       '(
 		bash-completion
-		chatgpt-shell
 		company
 		consult
 		debian-el

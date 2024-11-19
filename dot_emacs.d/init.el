@@ -146,9 +146,6 @@
 (defun ab-enable-whitespace-mode () (not (derived-mode-p 'magit-mode)))
 (add-function :before-while whitespace-enable-predicate 'ab-enable-whitespace-mode)
 
-;; chatgpt-shell; use "pass" password manager to retrieve api key
-(setq chatgpt-shell-openai-key (lambda () (nth 0 (process-lines "pass" "show" "openai/key"))))
-
 ;; special setup for "work purposes" only
 (if (boundp 'gad-work-setup)
     (progn (message "%s" "work setup: perhaps use copilot")
