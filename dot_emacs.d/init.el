@@ -22,7 +22,7 @@
 (which-key-mode 1)
 (vertico-mode 1)
 (marginalia-mode 1)
-(global-diff-hl-mode)
+(global-diff-hl-mode 1)
 (golden-ratio-mode 1)
 
 ;; Eamcs >= 29
