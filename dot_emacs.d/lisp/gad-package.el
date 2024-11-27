@@ -14,6 +14,7 @@
 		dpkg-dev-el
 		flycheck
 		go-mode
+		golden-ratio
 		langtool
 		magit
 		markdown-mode
