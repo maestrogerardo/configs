@@ -53,6 +53,7 @@
 		f
 		editorconfig
 		jsonrpc
+		copilot-chat
 		))
 
 (if (boundp 'gad-work-setup)
