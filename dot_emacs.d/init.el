@@ -148,7 +148,7 @@
 
 ;; special setup for "work purposes" only
 (if (boundp 'gad-work-setup)
-    (progn (message "%s" "work setup: perhaps use copilot")
+	(progn (message "%s" "work setup: perhaps use copilot")
 		   (add-to-list 'load-path "/home/gad/dvl/src/github/copilot.el")
 		   (require 'copilot)
 		   (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
