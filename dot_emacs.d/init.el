@@ -146,15 +146,11 @@
 (defun ab-enable-whitespace-mode () (not (derived-mode-p 'magit-mode)))
 (add-function :before-while whitespace-enable-predicate 'ab-enable-whitespace-mode)
 
-;; special setup for "work purposes" only
-(if (boundp 'gad-work-setup)
-	(progn (message "%s" "work setup: perhaps use copilot")
-		   (add-to-list 'load-path "/home/gad/dvl/src/github/copilot.el")
-		   (require 'copilot)
-		   (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-		   (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
-		   (setq package-selected-packages (append gad-selected-packages gad-selected-packages-work)))
-  (progn (message "%s" "default setup: do never ever use copilot")))
+;; Potential use of copilot
+(add-to-list 'load-path "/home/gad/dvl/src/github/copilot.el")
+(require 'copilot)
+(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
 
 ;; mini-buildd support
 (setq mbd-archives '(ui))
