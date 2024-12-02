@@ -1,3 +1,11 @@
+(defface gad-custom-green-face
+  '((t :foreground "green" :weight bold))
+  "Face for green text.")
+
+(defface gad-custom-yellow-face
+  '((t :foreground "yellow" :weight bold))
+  "Face for yellow text.")
+
 (defun gad-read-file-to-string (file-path)
   "Read the contents of FILE-PATH and return as a string."
   (with-temp-buffer
@@ -14,13 +22,13 @@
 (defun gad-append-to-mode-line (text)
   "Append a custom TEXT to the mode line."
   (setq-default mode-line-format
-				(append mode-line-format (list (format " | %s" text))))
+				(append mode-line-format (list (format "%s" text))))
   (force-mode-line-update))
 
 (if (gad-file-content-equals "~/.gad_user_type" "wrk")
 	(progn (message (format "setup: wrk, email: %s" (getenv "GIT_AUTHOR_EMAIL")))
-		   (gad-append-to-mode-line "wrk")
+		   (gad-append-to-mode-line (format " [%s]" (propertize "wrk" 'face 'gad-custom-yellow-face)))
 		   (setq gad-work-setup t))
   (progn
 	(message (format "setup: prv, email: %s" (getenv "GIT_AUTHOR_EMAIL")))
-	(gad-append-to-mode-line "prv")))
+	(gad-append-to-mode-line (format " [%s]" (propertize "prv" 'face 'gad-custom-green-face)))))
