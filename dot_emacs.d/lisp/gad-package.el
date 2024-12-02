@@ -9,15 +9,19 @@
 		bash-completion
 		company
 		consult
+		copilot-chat
 		debian-el
 		diff-hl
 		dpkg-dev-el
+		editorconfig
+		f
 		flycheck
 		go-mode
+		jsonrpc
 		langtool
 		magit
-		markdown-mode
 		marginalia
+		markdown-mode
 		orderless
 		php-mode
 		projectile
@@ -45,18 +49,3 @@
 (if (>= emacs-major-version 29)
     (setq package-selected-packages gad-selected-packages)
   (setq package-selected-packages (append gad-selected-packages gad-selected-packages-lt-emacs-29)))
-
-;; packages only necessary for "work purposes)
-(defvar gad-selected-packages-work)
-(setq gad-selected-packages-work
-	  '(
-		f
-		editorconfig
-		jsonrpc
-		copilot-chat
-		))
-
-(if (boundp 'gad-work-setup)
-    (progn (message "%s" "using packages for \"work setup\"...")
-	   (setq package-selected-packages (append gad-selected-packages gad-selected-packages-work)))
-  (progn (message "%s" "using packages for \"default setup\"...")))
