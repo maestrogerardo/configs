@@ -63,6 +63,7 @@
   (defvaralias 'c-basic-offset 'tab-width)
   (display-line-numbers-mode 1)
   (setq truncate-lines t)
+  (copilot-mode 1)
   (rainbow-mode)
   (ignore-errors (rainbow-delimiters-mode)))
 
