@@ -24,6 +24,9 @@
 (marginalia-mode 1)
 (global-diff-hl-mode 1)
 
+;; Emacs >= 28
+(if (>= emacs-major-version 28) (context-menu-mode 1))
+
 ;; Eamcs >= 29
 (if (>= emacs-major-version 29) (pixel-scroll-precision-mode 1))
 
