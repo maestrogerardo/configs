@@ -66,7 +66,7 @@
   (defvaralias 'c-basic-offset 'tab-width)
   (display-line-numbers-mode 1)
   (setq truncate-lines t)
-  (rainbow-mode)
+  (rainbow-mode 1)
   (ignore-errors (rainbow-delimiters-mode)))
 
 (defun gad_c-and-cpp-mode-hook ()
