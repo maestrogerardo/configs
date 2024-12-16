@@ -66,14 +66,13 @@
   (defvaralias 'c-basic-offset 'tab-width)
   (display-line-numbers-mode 1)
   (setq truncate-lines t)
-  (copilot-mode 1)
   (rainbow-mode)
   (ignore-errors (rainbow-delimiters-mode)))
 
 (defun gad_c-and-cpp-mode-hook ()
   (eglot-ensure)
   (add-hook 'eglot-managed-mode-hook (lambda () (eglot-inlay-hints-mode -1)))
-  )
+  (copilot-mode 1))
 
 ;; C, C++
 (add-hook 'c-mode-hook #'gad_c-and-cpp-mode-hook)
