@@ -45,6 +45,10 @@
 (setq dictionary-server "dict.org")
 
 ;; auto completion
+;; use company-box if running in graphical mode
+(if (display-graphic-p)
+    (add-hook 'company-mode-hook 'company-box-mode))
+
 (global-company-mode 1)
 
 ;; tree-sitter

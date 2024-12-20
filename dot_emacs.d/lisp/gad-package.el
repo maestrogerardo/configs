@@ -8,6 +8,7 @@
       '(
 		bash-completion
 		company
+		company-box
 		consult
 		copilot-chat
 		debian-el
