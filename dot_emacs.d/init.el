@@ -47,7 +47,8 @@
 ;; auto completion
 ;; use company-box if running in graphical mode
 (if (display-graphic-p)
-    (add-hook 'company-mode-hook 'company-box-mode))
+    (progn (add-hook 'company-mode-hook 'company-box-mode)
+		   (setq company-box-frame-top-margin 20)))
 
 (global-company-mode 1)
 
