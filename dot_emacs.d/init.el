@@ -34,7 +34,7 @@
 ;; Eamcs >= 29
 (if (>= emacs-major-version 29) (pixel-scroll-precision-mode 1))
 
-;; restore split winodows settings
+;; restore split windows settings
 (winner-mode 1)
 
 ;; windmove
