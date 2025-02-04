@@ -2,7 +2,7 @@
 (load "/home/gad/dvl/src/github/configs/dot_emacs.d/lisp/gad-package.el")
 
 ;; custom file for "M-x customize"
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file "~/.emacs.d/lisp/custom.el")
 (load custom-file 'noerror 'nomessage)
 
 ;; start maximized
