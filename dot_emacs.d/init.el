@@ -1,6 +1,10 @@
 (load "/home/gad/dvl/src/github/configs/dot_emacs.d/lisp/gad-pre-init.el")
 (load "/home/gad/dvl/src/github/configs/dot_emacs.d/lisp/gad-package.el")
 
+;; custom file for "M-x customize"
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror 'nomessage)
+
 ;; start maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -181,10 +185,3 @@
 	(find-file "src/Main.cpp"))
   (let ((default-directory "/home/gad/dvl/src/lundgren/gb-lpe/"))
 	(compile "make -k -j$(nproc)")))
-
-(custom-set-faces
- '(default ((t (:family "Noto Mono" :foundry "GOOG" :slant normal :weight regular :height 95 :width normal))))
- '(whitespace-indentation ((t (:background "#ebebeb"))))
- '(whitespace-space-after-tab ((t (:background "#ebebeb"))))
- '(whitespace-space-before-tab ((t (:background "#ebebeb"))))
- '(whitespace-tab ((t (:background "#f7f7f7")))))
