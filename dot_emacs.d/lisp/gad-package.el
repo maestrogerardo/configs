@@ -2,7 +2,7 @@
 (add-to-list 'package-archives '("MELPA" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-;; default packages
+;; default packages (emacs >= 30)
 (defvar gad-selected-packages)
 (setq gad-selected-packages
       '(
@@ -14,7 +14,6 @@
 		debian-el
 		diff-hl
 		dpkg-dev-el
-		editorconfig
 		f
 		flycheck
 		go-mode
@@ -35,18 +34,30 @@
 		vertico
 		vterm
 		web-mode
-		which-key
 		yascroll
 		))
 
-;; packages for emacs < 29
-(defvar gad-selected-packages-lt-emacs-29)
-(setq gad-selected-packages-lt-emacs-29
+;; packages for emacs = 29
+(defvar gad-selected-packages-emacs-29)
+(setq gad-selected-packages-emacs-29-extra
 	  '(
-		eglot
-		tree-sitter
+		editorconfig
+		which-key
 		))
 
-(if (>= emacs-major-version 29)
+;; packages for emacs < 29
+(defvar gad-selected-packages-lt-emacs-29-extra)
+(setq gad-selected-packages-lt-emacs-29-extra
+	  '(
+		editorconfig
+		eglot
+		tree-sitter
+		which-key
+		))
+
+(if (>= emacs-major-version 30)
     (setq package-selected-packages gad-selected-packages)
-  (setq package-selected-packages (append gad-selected-packages gad-selected-packages-lt-emacs-29)))
+  (if (= emacs-major-version 29)
+	  (setq package-selected-packages (append gad-selected-packages gad-selected-packages-emacs-29-extra))
+	(if (< emacs-major-version 29)
+		(setq package-selected-packages (append gad-selected-packages gad-selected-packages-lt-emacs-29-extra)))))
