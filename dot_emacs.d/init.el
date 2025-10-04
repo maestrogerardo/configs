@@ -149,10 +149,6 @@
 			 (replace-match (format "%s: " file)))))))
 (setq magit-commit-add-log-insert-function 'gad_magit-commit-add-log-insert)
 
-;; Add "Tracked files" section to magit status buffer
-(magit-add-section-hook 'magit-status-sections-hook
-						#'magit-insert-tracked-files nil t)
-
 ;; Whitespace stuff
 ;; No marking, no extra handling of normal spaces, make tabs only slightly lighter
 (setq whitespace-style '(face trailing tabs newline empty indentation space-after-tab space-before-tab))
