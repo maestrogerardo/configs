@@ -174,7 +174,7 @@
   "Set up my preferred initial window layout for gb dev."
   (interactive)
   (delete-other-windows)
-  (let ((main-dir "/home/gad/dvl/src/lundgren/gb-lpe/"))
+  (let ((main-dir "/home/gad/dvl/src/lundgren/gb/"))
 	(find-file main-dir)
 	(split-window-right)
 	(magit-status)
@@ -183,5 +183,5 @@
 	(vterm)
 	(treemacs)
 	(find-file "src/Main.cpp"))
-  (let ((default-directory "/home/gad/dvl/src/lundgren/gb-lpe/"))
+  (let ((default-directory "/home/gad/dvl/src/lundgren/gb/"))
 	(compile "make -k -j$(nproc)")))
