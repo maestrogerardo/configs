@@ -27,6 +27,7 @@
 (vertico-mode 1)
 (marginalia-mode 1)
 (global-diff-hl-mode 1)
+(global-hl-line-mode 1)
 
 ;; Emacs >= 28
 (if (>= emacs-major-version 28) (context-menu-mode 1))
