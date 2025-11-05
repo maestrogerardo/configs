@@ -27,7 +27,10 @@
 (vertico-mode 1)
 (marginalia-mode 1)
 (global-diff-hl-mode 1)
-(global-hl-line-mode 1)
+
+;; enable hl-line for all programming major modes and modes derived from text-mode
+(add-hook 'prog-mode-hook #'hl-line-mode)
+(add-hook 'text-mode-hook #'hl-line-mode)
 
 ;; Emacs >= 28
 (if (>= emacs-major-version 28) (context-menu-mode 1))
