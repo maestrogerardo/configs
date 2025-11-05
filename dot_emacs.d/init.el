@@ -29,6 +29,7 @@
 (global-diff-hl-mode 1)
 
 ;; enable hl-line for all programming major modes and modes derived from text-mode
+;; kudos to https://emacsredux.com/blog/2020/11/21/disable-global-hl-line-mode-for-specific-modes/
 (add-hook 'prog-mode-hook #'hl-line-mode)
 (add-hook 'text-mode-hook #'hl-line-mode)
 
