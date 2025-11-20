@@ -28,6 +28,7 @@
 		rainbow-delimiters
 		rainbow-mode
 		request
+		transient
 		tree-sitter-langs
 		treemacs
 		treemacs-magit
