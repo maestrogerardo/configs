@@ -5,6 +5,9 @@
 (setq custom-file "~/.emacs.d/lisp/custom.el")
 (load custom-file 'noerror 'nomessage)
 
+;; colors
+(set-background-color "#f0f0f0")
+
 ;; start maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
