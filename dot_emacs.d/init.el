@@ -167,7 +167,6 @@
 (add-function :before-while whitespace-enable-predicate 'ab-enable-whitespace-mode)
 
 ;; Potential use of copilot
-(add-to-list 'load-path "/home/gad/dvl/src/github/copilot.el")
 (require 'copilot)
 (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
 (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)

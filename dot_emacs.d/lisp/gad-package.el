@@ -10,6 +10,7 @@
 		company
 		company-box
 		consult
+		copilot
 		copilot-chat
 		debian-el
 		diff-hl
