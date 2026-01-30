@@ -15,7 +15,6 @@
 		debian-el
 		diff-hl
 		dpkg-dev-el
-		eldoc-box
 		f
 		flycheck
 		go-mode

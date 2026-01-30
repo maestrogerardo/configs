@@ -84,10 +84,6 @@
   (display-line-numbers-mode 1)
   (setq truncate-lines t)
   (rainbow-mode 1)
-  (add-hook 'eglot-managed-mode-hook
-			(lambda ()
-              (when (display-graphic-p)
-				(eldoc-box-hover-at-point-mode 1))))
   (ignore-errors (rainbow-delimiters-mode)))
 
 (defun gad_c-and-cpp-mode-hook ()
