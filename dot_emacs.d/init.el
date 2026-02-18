@@ -83,6 +83,7 @@
   (defvaralias 'c-basic-offset 'tab-width)
   (display-line-numbers-mode 1)
   (setq truncate-lines t)
+  (advice-add 'eglot-rename :after (lambda (&rest _) (save-some-buffers t)))
   (rainbow-mode 1)
   (ignore-errors (rainbow-delimiters-mode)))
 
