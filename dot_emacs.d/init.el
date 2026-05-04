@@ -29,10 +29,11 @@
 
 ;; --- User functions ---
 
+(defvaralias 'c-basic-offset 'tab-width)
+
 (defun gad_activateCodingStuff ()
   (setq-default indent-tabs-mode t
                 tab-width 4)
-  (defvaralias 'c-basic-offset 'tab-width)
   (display-line-numbers-mode 1)
   (setq truncate-lines t)
   (advice-add 'eglot-rename :after (lambda (&rest _) (save-some-buffers t)))
