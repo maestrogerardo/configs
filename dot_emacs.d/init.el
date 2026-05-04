@@ -195,6 +195,13 @@
     (not (derived-mode-p 'magit-mode)))
   (add-function :before-while whitespace-enable-predicate #'ab-enable-whitespace-mode))
 
+(use-package claude-code
+  :vc (:url "https://github.com/stevemolitor/claude-code.el")
+  :bind-keymap ("C-c c" . claude-code-command-map)
+  :config
+  (setq claude-code-terminal-backend 'vterm)
+  (setq claude-code-no-delete-other-windows t))
+
 ;; Packages installed but not yet actively configured
 (use-package editorconfig)
 (use-package consult)
