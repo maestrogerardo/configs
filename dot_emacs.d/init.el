@@ -195,8 +195,11 @@
     (not (derived-mode-p 'magit-mode)))
   (add-function :before-while whitespace-enable-predicate #'ab-enable-whitespace-mode))
 
+(use-package inheritenv
+  :vc (:url "https://github.com/purcell/inheritenv" :rev :newest))
+
 (use-package claude-code
-  :vc (:url "https://github.com/stevemolitor/claude-code.el")
+  :vc (:url "https://github.com/stevemolitor/claude-code.el" :rev :newest)
   :bind-keymap ("C-c c" . claude-code-command-map)
   :config
   (setq claude-code-terminal-backend 'vterm)
