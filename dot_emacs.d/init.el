@@ -143,7 +143,7 @@
   (c++-mode . gad_c-and-cpp-mode-hook))
 
 (use-package magit
-  :custom (magit-commit-add-log-insert-function #'gad_magit-commit-add-log-insert)
+  :config (setq magit-commit-add-log-insert-function #'gad_magit-commit-add-log-insert)
   :hook   (git-commit-setup . git-commit-turn-on-flyspell))
 
 (use-package copilot
