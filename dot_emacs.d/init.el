@@ -4,7 +4,7 @@
 (add-to-list 'package-archives '("MELPA" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-;; use-package is built-in since Emacs 29
+;; bootstrap use-package on first run
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
