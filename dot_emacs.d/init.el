@@ -49,13 +49,13 @@
   (display-line-numbers-mode 1)
   (setq truncate-lines t)
   (advice-add 'eglot-rename :after (lambda (&rest _) (save-some-buffers t)))
-  (rainbow-mode 1)
+  (ignore-errors (rainbow-mode 1))
   (ignore-errors (rainbow-delimiters-mode)))
 
 (defun gad_c-and-cpp-mode-hook ()
   (eglot-ensure)
   (add-hook 'eglot-managed-mode-hook (lambda () (eglot-inlay-hints-mode -1)))
-  (copilot-mode 1))
+  (ignore-errors (copilot-mode 1)))
 
 (defun gad_recompile ()
   "Interrupt current compilation and recompile."
