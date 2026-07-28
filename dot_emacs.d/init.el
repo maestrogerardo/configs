@@ -57,11 +57,6 @@
   (add-hook 'eglot-managed-mode-hook (lambda () (eglot-inlay-hints-mode -1)))
   (ignore-errors (copilot-mode 1)))
 
-(defun gad_go-mode-hook ()
-  (eglot-ensure)
-  (add-hook 'before-save-hook #'gofmt-before-save nil t)
-  (ignore-errors (copilot-mode 1)))
-
 (defun gad_recompile ()
   "Interrupt current compilation and recompile."
   (interactive)
@@ -152,7 +147,11 @@
 (use-package go-mode
   :custom (gofmt-command "goimports")
   :hook
-  (go-mode . gad_go-mode-hook))
+  (go-mode . (lambda ()
+			   (eglot-ensure)
+			   (add-hook 'before-save-hook #'gofmt-before-save nil t)
+			   ;; (ignore-errors (copilot-mode 1))
+			   )))
 
 (use-package cc-mode
   :ensure nil
